@@ -1,0 +1,2116 @@
+{
+  "_meta": {
+    "product": "UNKLAB HUB",
+    "datasetVersion": "1.1",
+    "createdDate": "2026-11-10",
+    "purpose": "Seed data simulasi untuk pengembangan dan demonstrasi Front End, termasuk pola kegiatan asrama dan ibadah mingguan berdasarkan informasi tim.",
+    "timezone": "Asia/Makassar",
+    "importantWarning": "Seluruh tanggal, waktu, dan lokasi event dalam file ini adalah DUMMY. Nama organisasi, choir, dan asrama adalah data referensi dari tim. Jangan perlakukan jadwal dummy sebagai jadwal resmi UNKLAB.",
+    "seedDataOnly": true,
+    "academicCalendar2026": "Belum diisi. Masukkan hanya berdasarkan dokumen kalender akademik resmi yang diberikan oleh tim.",
+    "updatedDate": "2026-11-10",
+    "dormitoryScheduleNote": "Pola kegiatan asrama dan ibadah mengikuti informasi yang diberikan tim. Jam, tanggal, dan lokasi event seed tetap simulasi. Jadwal Sabbath wajib diperiksa terhadap kalender akademik 2026 untuk mengecualikan long weekend."
+  },
+  "categories": [
+    {
+      "id": "cat-academic-calendar",
+      "name": "Kalender Akademik",
+      "slug": "academic-calendar",
+      "description": "Agenda akademik resmi yang sumbernya berasal dari dokumen kalender akademik UNKLAB.",
+      "colorToken": "academic"
+    },
+    {
+      "id": "cat-organization",
+      "name": "Organisasi",
+      "slug": "organization",
+      "description": "Meeting rutin dan kegiatan yang diselenggarakan organisasi atau komunitas kampus.",
+      "colorToken": "organization"
+    },
+    {
+      "id": "cat-choir",
+      "name": "Choir",
+      "slug": "choir",
+      "description": "Anniversary, homecoming, latihan khusus, penampilan, dan pelayanan choir.",
+      "colorToken": "choir"
+    },
+    {
+      "id": "cat-dormitory",
+      "name": "Kegiatan Asrama",
+      "slug": "dormitory",
+      "description": "Kegiatan bersama yang diselenggarakan atau berkaitan dengan kehidupan asrama.",
+      "colorToken": "dormitory"
+    },
+    {
+      "id": "cat-faculty",
+      "name": "Kegiatan Fakultas/Program Studi",
+      "slug": "faculty",
+      "description": "Kegiatan yang diselenggarakan fakultas atau program studi.",
+      "colorToken": "faculty"
+    },
+    {
+      "id": "cat-seminar",
+      "name": "Seminar/Workshop/Kompetisi",
+      "slug": "seminar-workshop-competition",
+      "description": "Seminar, workshop, pelatihan, dan kompetisi di lingkungan kampus.",
+      "colorToken": "seminar"
+    },
+    {
+      "id": "cat-campus",
+      "name": "Kegiatan Kampus Lainnya",
+      "slug": "campus-event",
+      "description": "Kegiatan kampus yang tidak termasuk kategori khusus lainnya.",
+      "colorToken": "campus"
+    },
+    {
+      "id": "cat-announcement",
+      "name": "Pengumuman Penting",
+      "slug": "announcement",
+      "description": "Pengumuman dan pengingat penting yang memiliki tanggal atau tenggat.",
+      "colorToken": "announcement"
+    },
+    {
+      "id": "cat-religious",
+      "name": "Kegiatan Kerohanian / Ibadah",
+      "slug": "religious-activities",
+      "description": "Jadwal ibadah Midweek, Vesper, Sabbath, dan kegiatan kerohanian lainnya.",
+      "colorToken": "religious"
+    }
+  ],
+  "organizations": [
+    {
+      "id": "org-bem-unklab",
+      "name": "BEM Unklab",
+      "shortName": "BEM UNKLAB",
+      "categoryId": "cat-organization",
+      "routineSchedule": {
+        "frequency": "weekly",
+        "dayOfWeek": "THURSDAY",
+        "dayLabel": "Kamis",
+        "startTime": "16:00",
+        "endTime": "17:00",
+        "location": "Ruang Kegiatan Organisasi (Lokasi Simulasi)",
+        "scheduleStatus": "dummy",
+        "isConfirmed": false,
+        "note": "Contoh pola meeting Kamis untuk kebutuhan demonstrasi. Konfirmasi jadwal asli kepada organisasi sebelum publikasi."
+      },
+      "scheduleNote": "Mayoritas organisasi dapat memiliki meeting rutin pada hari Kamis; jadwal per organisasi pada file ini hanya simulasi dan bukan jadwal resmi.",
+      "isDummy": true
+    },
+    {
+      "id": "org-cssa",
+      "name": "CSSA",
+      "shortName": "CSSA",
+      "categoryId": "cat-organization",
+      "routineSchedule": {
+        "frequency": "weekly",
+        "dayOfWeek": "THURSDAY",
+        "dayLabel": "Kamis",
+        "startTime": "16:30",
+        "endTime": "17:30",
+        "location": "Ruang Kegiatan Organisasi (Lokasi Simulasi)",
+        "scheduleStatus": "dummy",
+        "isConfirmed": false,
+        "note": "Contoh pola meeting Kamis untuk kebutuhan demonstrasi. Konfirmasi jadwal asli kepada organisasi sebelum publikasi."
+      },
+      "scheduleNote": "Mayoritas organisasi dapat memiliki meeting rutin pada hari Kamis; jadwal per organisasi pada file ini hanya simulasi dan bukan jadwal resmi.",
+      "isDummy": true
+    },
+    {
+      "id": "org-bem-ubs",
+      "name": "BEM UBS",
+      "shortName": "BEM UBS",
+      "categoryId": "cat-organization",
+      "routineSchedule": {
+        "frequency": "weekly",
+        "dayOfWeek": "THURSDAY",
+        "dayLabel": "Kamis",
+        "startTime": "17:00",
+        "endTime": "18:00",
+        "location": "Ruang Kegiatan Organisasi (Lokasi Simulasi)",
+        "scheduleStatus": "dummy",
+        "isConfirmed": false,
+        "note": "Contoh pola meeting Kamis untuk kebutuhan demonstrasi. Konfirmasi jadwal asli kepada organisasi sebelum publikasi."
+      },
+      "scheduleNote": "Mayoritas organisasi dapat memiliki meeting rutin pada hari Kamis; jadwal per organisasi pada file ini hanya simulasi dan bukan jadwal resmi.",
+      "isDummy": true
+    },
+    {
+      "id": "org-ikmapap",
+      "name": "IKMAPAP (Ikatan Mahasisa Papua)",
+      "shortName": "IKMAPAP",
+      "categoryId": "cat-organization",
+      "routineSchedule": {
+        "frequency": "weekly",
+        "dayOfWeek": "THURSDAY",
+        "dayLabel": "Kamis",
+        "startTime": "17:30",
+        "endTime": "18:30",
+        "location": "Ruang Kegiatan Organisasi (Lokasi Simulasi)",
+        "scheduleStatus": "dummy",
+        "isConfirmed": false,
+        "note": "Contoh pola meeting Kamis untuk kebutuhan demonstrasi. Konfirmasi jadwal asli kepada organisasi sebelum publikasi."
+      },
+      "scheduleNote": "Mayoritas organisasi dapat memiliki meeting rutin pada hari Kamis; jadwal per organisasi pada file ini hanya simulasi dan bukan jadwal resmi.",
+      "isDummy": true
+    },
+    {
+      "id": "org-ikmamalut",
+      "name": "IKMAMALUT (Ikatan Mahadiswa Maluku Utara)",
+      "shortName": "IKMAMALUT",
+      "categoryId": "cat-organization",
+      "routineSchedule": {
+        "frequency": "weekly",
+        "dayOfWeek": "THURSDAY",
+        "dayLabel": "Kamis",
+        "startTime": "18:00",
+        "endTime": "19:00",
+        "location": "Ruang Kegiatan Organisasi (Lokasi Simulasi)",
+        "scheduleStatus": "dummy",
+        "isConfirmed": false,
+        "note": "Contoh pola meeting Kamis untuk kebutuhan demonstrasi. Konfirmasi jadwal asli kepada organisasi sebelum publikasi."
+      },
+      "scheduleNote": "Mayoritas organisasi dapat memiliki meeting rutin pada hari Kamis; jadwal per organisasi pada file ini hanya simulasi dan bukan jadwal resmi.",
+      "isDummy": true
+    },
+    {
+      "id": "org-ikmam",
+      "name": "IKMAM",
+      "shortName": "IKMAM",
+      "categoryId": "cat-organization",
+      "routineSchedule": {
+        "frequency": "weekly",
+        "dayOfWeek": "THURSDAY",
+        "dayLabel": "Kamis",
+        "startTime": "18:30",
+        "endTime": "19:30",
+        "location": "Ruang Kegiatan Organisasi (Lokasi Simulasi)",
+        "scheduleStatus": "dummy",
+        "isConfirmed": false,
+        "note": "Contoh pola meeting Kamis untuk kebutuhan demonstrasi. Konfirmasi jadwal asli kepada organisasi sebelum publikasi."
+      },
+      "scheduleNote": "Mayoritas organisasi dapat memiliki meeting rutin pada hari Kamis; jadwal per organisasi pada file ini hanya simulasi dan bukan jadwal resmi.",
+      "isDummy": true
+    },
+    {
+      "id": "org-imabat",
+      "name": "IMABAT (Ikatan Mahasiswa Batak)",
+      "shortName": "IMABAT",
+      "categoryId": "cat-organization",
+      "routineSchedule": {
+        "frequency": "weekly",
+        "dayOfWeek": "THURSDAY",
+        "dayLabel": "Kamis",
+        "startTime": "19:00",
+        "endTime": "20:00",
+        "location": "Ruang Kegiatan Organisasi (Lokasi Simulasi)",
+        "scheduleStatus": "dummy",
+        "isConfirmed": false,
+        "note": "Contoh pola meeting Kamis untuk kebutuhan demonstrasi. Konfirmasi jadwal asli kepada organisasi sebelum publikasi."
+      },
+      "scheduleNote": "Mayoritas organisasi dapat memiliki meeting rutin pada hari Kamis; jadwal per organisasi pada file ini hanya simulasi dan bukan jadwal resmi.",
+      "isDummy": true
+    },
+    {
+      "id": "org-ikmanut",
+      "name": "IKMANUT (Ikatan Mahasiswa Nusa Utara)",
+      "shortName": "IKMANUT",
+      "categoryId": "cat-organization",
+      "routineSchedule": {
+        "frequency": "weekly",
+        "dayOfWeek": "THURSDAY",
+        "dayLabel": "Kamis",
+        "startTime": "16:00",
+        "endTime": "17:30",
+        "location": "Ruang Kegiatan Organisasi (Lokasi Simulasi)",
+        "scheduleStatus": "dummy",
+        "isConfirmed": false,
+        "note": "Contoh pola meeting Kamis untuk kebutuhan demonstrasi. Konfirmasi jadwal asli kepada organisasi sebelum publikasi."
+      },
+      "scheduleNote": "Mayoritas organisasi dapat memiliki meeting rutin pada hari Kamis; jadwal per organisasi pada file ini hanya simulasi dan bukan jadwal resmi.",
+      "isDummy": true
+    },
+    {
+      "id": "org-gate-ministry",
+      "name": "Gate Ministry",
+      "shortName": "Gate Ministry",
+      "categoryId": "cat-organization",
+      "routineSchedule": null,
+      "scheduleNote": "Belum diberikan pola meeting rutin untuk organisasi ini. Jangan mengasumsikan hari atau jam kegiatan.",
+      "isDummy": true
+    },
+    {
+      "id": "org-kspm",
+      "name": "KSPM (Kelompok Studi Pasar Modal)",
+      "shortName": "KSPM",
+      "categoryId": "cat-organization",
+      "routineSchedule": null,
+      "scheduleNote": "Belum diberikan pola meeting rutin untuk organisasi ini. Jangan mengasumsikan hari atau jam kegiatan.",
+      "isDummy": true
+    },
+    {
+      "id": "org-mapala",
+      "name": "MAPALA",
+      "shortName": "MAPALA",
+      "categoryId": "cat-organization",
+      "routineSchedule": null,
+      "scheduleNote": "Belum diberikan pola meeting rutin untuk organisasi ini. Jangan mengasumsikan hari atau jam kegiatan.",
+      "isDummy": true
+    },
+    {
+      "id": "org-genbi",
+      "name": "GENBI (Generasi Baru Indonesia)",
+      "shortName": "GENBI",
+      "categoryId": "cat-organization",
+      "routineSchedule": {
+        "frequency": "weekly",
+        "dayOfWeek": "THURSDAY",
+        "dayLabel": "Kamis",
+        "startTime": "17:00",
+        "endTime": "18:30",
+        "location": "Ruang Kegiatan Organisasi (Lokasi Simulasi)",
+        "scheduleStatus": "dummy",
+        "isConfirmed": false,
+        "note": "Contoh pola meeting Kamis untuk kebutuhan demonstrasi. Konfirmasi jadwal asli kepada organisasi sebelum publikasi."
+      },
+      "scheduleNote": "Mayoritas organisasi dapat memiliki meeting rutin pada hari Kamis; jadwal per organisasi pada file ini hanya simulasi dan bukan jadwal resmi.",
+      "isDummy": true
+    },
+    {
+      "id": "org-uvics",
+      "name": "UVICS (Unklab Virtue in Computer Science)",
+      "shortName": "UVICS",
+      "categoryId": "cat-organization",
+      "routineSchedule": null,
+      "scheduleNote": "Hari dan jam meeting rutin UVICS belum diberikan. Jangan membuat jadwal meeting dummy untuk UVICS sebelum ada informasi dari organisasi.",
+      "isDummy": false,
+      "sourceNote": "Nama organisasi mengikuti daftar resmi yang diberikan oleh tim."
+    }
+  ],
+  "choirs": [
+    {
+      "id": "choir-tuc",
+      "name": "TUC (The Unklab Choir)",
+      "shortName": "TUC",
+      "affiliation": "Universitas Klabat",
+      "categoryId": "cat-choir",
+      "commonEventTypes": [
+        "anniversary",
+        "homecoming",
+        "ministry_inside_unklab",
+        "ministry_outside_unklab"
+      ],
+      "schedulePattern": null,
+      "scheduleNote": "Jadwal choir tidak diasumsikan rutin pada hari tertentu. Tanggal setiap kegiatan harus mengikuti informasi dari choir terkait.",
+      "isDummy": true
+    },
+    {
+      "id": "choir-tufc",
+      "name": "TUFC (The Unklab FEB Choir)",
+      "shortName": "TUFC",
+      "affiliation": "FEB",
+      "categoryId": "cat-choir",
+      "commonEventTypes": [
+        "anniversary",
+        "homecoming",
+        "ministry_inside_unklab",
+        "ministry_outside_unklab"
+      ],
+      "schedulePattern": null,
+      "scheduleNote": "Jadwal choir tidak diasumsikan rutin pada hari tertentu. Tanggal setiap kegiatan harus mengikuti informasi dari choir terkait.",
+      "isDummy": true
+    },
+    {
+      "id": "choir-vocs",
+      "name": "VOCS choir unklab",
+      "shortName": "VOCS",
+      "affiliation": "UNKLAB",
+      "categoryId": "cat-choir",
+      "commonEventTypes": [
+        "anniversary",
+        "homecoming",
+        "ministry_inside_unklab",
+        "ministry_outside_unklab"
+      ],
+      "schedulePattern": null,
+      "scheduleNote": "Jadwal choir tidak diasumsikan rutin pada hari tertentu. Tanggal setiap kegiatan harus mengikuti informasi dari choir terkait.",
+      "isDummy": true
+    },
+    {
+      "id": "choir-tuec",
+      "name": "The Unklab Echo Choir (TUEC)",
+      "shortName": "TUEC",
+      "affiliation": "UNKLAB",
+      "categoryId": "cat-choir",
+      "commonEventTypes": [
+        "anniversary",
+        "homecoming",
+        "ministry_inside_unklab",
+        "ministry_outside_unklab"
+      ],
+      "schedulePattern": null,
+      "scheduleNote": "Jadwal choir tidak diasumsikan rutin pada hari tertentu. Tanggal setiap kegiatan harus mengikuti informasi dari choir terkait.",
+      "isDummy": true
+    },
+    {
+      "id": "choir-nursing",
+      "name": "The Unklab Nursing Choir",
+      "shortName": "The Unklab Nursing Choir",
+      "affiliation": "Fakultas Keperawatan",
+      "categoryId": "cat-choir",
+      "commonEventTypes": [
+        "anniversary",
+        "homecoming",
+        "ministry_inside_unklab",
+        "ministry_outside_unklab"
+      ],
+      "schedulePattern": null,
+      "scheduleNote": "Jadwal choir tidak diasumsikan rutin pada hari tertentu. Tanggal setiap kegiatan harus mengikuti informasi dari choir terkait.",
+      "isDummy": true
+    },
+    {
+      "id": "choir-tot",
+      "name": "TOT (teachers of tomorrow)",
+      "shortName": "TOT",
+      "affiliation": "FKIP",
+      "categoryId": "cat-choir",
+      "commonEventTypes": [
+        "anniversary",
+        "homecoming",
+        "ministry_inside_unklab",
+        "ministry_outside_unklab"
+      ],
+      "schedulePattern": null,
+      "scheduleNote": "Jadwal choir tidak diasumsikan rutin pada hari tertentu. Tanggal setiap kegiatan harus mengikuti informasi dari choir terkait.",
+      "isDummy": true
+    }
+  ],
+  "dormitoryActivities": [
+    {
+      "id": "dorm-open-house",
+      "name": "OPEN HOUSE",
+      "shortName": "Open House",
+      "categoryId": "cat-dormitory",
+      "schedulePattern": {
+        "frequency": "event_based",
+        "daysOfWeek": [
+          "SATURDAY"
+        ],
+        "dayLabels": [
+          "Sabtu / Sabbath"
+        ],
+        "patternStatus": "team_provided_pattern",
+        "isConfirmed": false,
+        "note": "Open House biasanya dilaksanakan pada hari Sabbath/Sabtu. Tanggal pastinya mengikuti pengumuman pengelola asrama; bukan berarti berlangsung setiap Sabtu."
+      },
+      "applicableDormitoryIds": [
+        "dormitory-jasmine-1",
+        "dormitory-jasmine-2",
+        "dormitory-guest-house",
+        "dormitory-genzet",
+        "dormitory-annex",
+        "dormitory-bougenvile",
+        "dormitory-crystal",
+        "dormitory-edelweis"
+      ],
+      "isDummy": true
+    },
+    {
+      "id": "dorm-olahraga",
+      "name": "OLAHRAGA BERSAMA ANTAR ASRAMA",
+      "shortName": "Olahraga bersama antar asrama",
+      "categoryId": "cat-dormitory",
+      "schedulePattern": {
+        "frequency": "event_based",
+        "daysOfWeek": [
+          "SUNDAY"
+        ],
+        "dayLabels": [
+          "Minggu"
+        ],
+        "patternStatus": "team_provided_pattern",
+        "isConfirmed": false,
+        "note": "Kegiatan olahraga bersama antar asrama dijadwalkan pada hari Minggu. Frekuensi dan tanggal pastinya perlu dikonfirmasi."
+      },
+      "applicableDormitoryIds": [
+        "dormitory-jasmine-1",
+        "dormitory-jasmine-2",
+        "dormitory-guest-house",
+        "dormitory-genzet",
+        "dormitory-annex",
+        "dormitory-bougenvile",
+        "dormitory-crystal",
+        "dormitory-edelweis"
+      ],
+      "isDummy": true
+    },
+    {
+      "id": "dorm-mix-formal",
+      "name": "MIX FORMAL",
+      "shortName": "Mix Formal",
+      "categoryId": "cat-dormitory",
+      "schedulePattern": {
+        "frequency": "event_based",
+        "daysOfWeek": [
+          "THURSDAY"
+        ],
+        "dayLabels": [
+          "Kamis"
+        ],
+        "patternStatus": "team_provided_pattern",
+        "isConfirmed": false,
+        "note": "Mix Formal menggunakan pola hari Kamis untuk data contoh. Frekuensi dan tanggal pastinya perlu dikonfirmasi."
+      },
+      "applicableDormitoryIds": [
+        "dormitory-jasmine-1",
+        "dormitory-jasmine-2",
+        "dormitory-guest-house",
+        "dormitory-genzet",
+        "dormitory-annex",
+        "dormitory-bougenvile",
+        "dormitory-crystal",
+        "dormitory-edelweis"
+      ],
+      "isDummy": true
+    },
+    {
+      "id": "dorm-worship",
+      "name": "IBADAH WORSHIP BERSAMA DENGAN ASRAMA LAIN",
+      "shortName": "Ibadah Worship bersama dengan asrama lain",
+      "categoryId": "cat-dormitory",
+      "schedulePattern": {
+        "frequency": "event_based",
+        "daysOfWeek": [
+          "THURSDAY"
+        ],
+        "dayLabels": [
+          "Kamis"
+        ],
+        "patternStatus": "team_provided_pattern",
+        "isConfirmed": false,
+        "note": "Ibadah Worship bersama dengan asrama lain menggunakan pola hari Kamis untuk data contoh. Ini berbeda dari jadwal ibadah rutin Midweek, Vesper, dan Sabbath."
+      },
+      "applicableDormitoryIds": [
+        "dormitory-jasmine-1",
+        "dormitory-jasmine-2",
+        "dormitory-guest-house",
+        "dormitory-genzet",
+        "dormitory-annex",
+        "dormitory-bougenvile",
+        "dormitory-crystal",
+        "dormitory-edelweis"
+      ],
+      "isDummy": true
+    },
+    {
+      "id": "dorm-study-time",
+      "name": "WAKTU UNTUK STUDY DI (ASRAMA/DINING)",
+      "shortName": "Waktu untuk Study di Asrama/Dining",
+      "categoryId": "cat-dormitory",
+      "schedulePattern": {
+        "frequency": "weekly",
+        "daysOfWeek": [
+          "MONDAY",
+          "TUESDAY"
+        ],
+        "dayLabels": [
+          "Senin",
+          "Selasa"
+        ],
+        "patternStatus": "team_provided_pattern",
+        "isConfirmed": false,
+        "note": "Waktu Study dijadwalkan setiap Senin dan Selasa. Jam dan lokasi pada event contoh tetap dummy."
+      },
+      "applicableDormitoryIds": [
+        "dormitory-jasmine-1",
+        "dormitory-jasmine-2",
+        "dormitory-guest-house",
+        "dormitory-genzet",
+        "dormitory-annex",
+        "dormitory-bougenvile",
+        "dormitory-crystal",
+        "dormitory-edelweis"
+      ],
+      "isDummy": true
+    }
+  ],
+  "events": [
+    {
+      "id": "event-meeting-bem-unklab-20261112",
+      "title": "Meeting Rutin BEM UNKLAB",
+      "categoryId": "cat-organization",
+      "eventType": "routine_meeting",
+      "organizerId": "org-bem-unklab",
+      "organizerName": "BEM Unklab",
+      "description": "Contoh agenda meeting rutin BEM Unklab. Jadwal ini merupakan data simulasi untuk demonstrasi UNKLAB HUB.",
+      "date": "2026-11-12",
+      "startTime": "16:00",
+      "endTime": "17:00",
+      "location": "Ruang Kegiatan Organisasi (Lokasi Simulasi)",
+      "locationScope": "inside_unklab_simulated",
+      "targetAudience": [
+        "mahasiswa"
+      ],
+      "tags": [
+        "meeting",
+        "organisasi",
+        "kamis"
+      ],
+      "status": "approved",
+      "sourceType": "demo_seed",
+      "isDummy": true,
+      "recurrenceGroupId": "recurrence-org-bem-unklab-thursday",
+      "recurrenceLabel": "Contoh pola mingguan setiap Kamis",
+      "approvedBy": "demo-seed",
+      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata."
+    },
+    {
+      "id": "event-meeting-bem-unklab-20261119",
+      "title": "Meeting Rutin BEM UNKLAB",
+      "categoryId": "cat-organization",
+      "eventType": "routine_meeting",
+      "organizerId": "org-bem-unklab",
+      "organizerName": "BEM Unklab",
+      "description": "Contoh agenda meeting rutin BEM Unklab. Jadwal ini merupakan data simulasi untuk demonstrasi UNKLAB HUB.",
+      "date": "2026-11-19",
+      "startTime": "16:00",
+      "endTime": "17:00",
+      "location": "Ruang Kegiatan Organisasi (Lokasi Simulasi)",
+      "locationScope": "inside_unklab_simulated",
+      "targetAudience": [
+        "mahasiswa"
+      ],
+      "tags": [
+        "meeting",
+        "organisasi",
+        "kamis"
+      ],
+      "status": "approved",
+      "sourceType": "demo_seed",
+      "isDummy": true,
+      "recurrenceGroupId": "recurrence-org-bem-unklab-thursday",
+      "recurrenceLabel": "Contoh pola mingguan setiap Kamis",
+      "approvedBy": "demo-seed",
+      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata."
+    },
+    {
+      "id": "event-meeting-cssa-20261112",
+      "title": "Meeting Rutin CSSA",
+      "categoryId": "cat-organization",
+      "eventType": "routine_meeting",
+      "organizerId": "org-cssa",
+      "organizerName": "CSSA",
+      "description": "Contoh agenda meeting rutin CSSA. Jadwal ini merupakan data simulasi untuk demonstrasi UNKLAB HUB.",
+      "date": "2026-11-12",
+      "startTime": "16:30",
+      "endTime": "17:30",
+      "location": "Ruang Kegiatan Organisasi (Lokasi Simulasi)",
+      "locationScope": "inside_unklab_simulated",
+      "targetAudience": [
+        "mahasiswa"
+      ],
+      "tags": [
+        "meeting",
+        "organisasi",
+        "kamis"
+      ],
+      "status": "approved",
+      "sourceType": "demo_seed",
+      "isDummy": true,
+      "recurrenceGroupId": "recurrence-org-cssa-thursday",
+      "recurrenceLabel": "Contoh pola mingguan setiap Kamis",
+      "approvedBy": "demo-seed",
+      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata."
+    },
+    {
+      "id": "event-meeting-cssa-20261119",
+      "title": "Meeting Rutin CSSA",
+      "categoryId": "cat-organization",
+      "eventType": "routine_meeting",
+      "organizerId": "org-cssa",
+      "organizerName": "CSSA",
+      "description": "Contoh agenda meeting rutin CSSA. Jadwal ini merupakan data simulasi untuk demonstrasi UNKLAB HUB.",
+      "date": "2026-11-19",
+      "startTime": "16:30",
+      "endTime": "17:30",
+      "location": "Ruang Kegiatan Organisasi (Lokasi Simulasi)",
+      "locationScope": "inside_unklab_simulated",
+      "targetAudience": [
+        "mahasiswa"
+      ],
+      "tags": [
+        "meeting",
+        "organisasi",
+        "kamis"
+      ],
+      "status": "approved",
+      "sourceType": "demo_seed",
+      "isDummy": true,
+      "recurrenceGroupId": "recurrence-org-cssa-thursday",
+      "recurrenceLabel": "Contoh pola mingguan setiap Kamis",
+      "approvedBy": "demo-seed",
+      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata."
+    },
+    {
+      "id": "event-meeting-bem-ubs-20261112",
+      "title": "Meeting Rutin BEM UBS",
+      "categoryId": "cat-organization",
+      "eventType": "routine_meeting",
+      "organizerId": "org-bem-ubs",
+      "organizerName": "BEM UBS",
+      "description": "Contoh agenda meeting rutin BEM UBS. Jadwal ini merupakan data simulasi untuk demonstrasi UNKLAB HUB.",
+      "date": "2026-11-12",
+      "startTime": "17:00",
+      "endTime": "18:00",
+      "location": "Ruang Kegiatan Organisasi (Lokasi Simulasi)",
+      "locationScope": "inside_unklab_simulated",
+      "targetAudience": [
+        "mahasiswa"
+      ],
+      "tags": [
+        "meeting",
+        "organisasi",
+        "kamis"
+      ],
+      "status": "approved",
+      "sourceType": "demo_seed",
+      "isDummy": true,
+      "recurrenceGroupId": "recurrence-org-bem-ubs-thursday",
+      "recurrenceLabel": "Contoh pola mingguan setiap Kamis",
+      "approvedBy": "demo-seed",
+      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata."
+    },
+    {
+      "id": "event-meeting-bem-ubs-20261119",
+      "title": "Meeting Rutin BEM UBS",
+      "categoryId": "cat-organization",
+      "eventType": "routine_meeting",
+      "organizerId": "org-bem-ubs",
+      "organizerName": "BEM UBS",
+      "description": "Contoh agenda meeting rutin BEM UBS. Jadwal ini merupakan data simulasi untuk demonstrasi UNKLAB HUB.",
+      "date": "2026-11-19",
+      "startTime": "17:00",
+      "endTime": "18:00",
+      "location": "Ruang Kegiatan Organisasi (Lokasi Simulasi)",
+      "locationScope": "inside_unklab_simulated",
+      "targetAudience": [
+        "mahasiswa"
+      ],
+      "tags": [
+        "meeting",
+        "organisasi",
+        "kamis"
+      ],
+      "status": "approved",
+      "sourceType": "demo_seed",
+      "isDummy": true,
+      "recurrenceGroupId": "recurrence-org-bem-ubs-thursday",
+      "recurrenceLabel": "Contoh pola mingguan setiap Kamis",
+      "approvedBy": "demo-seed",
+      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata."
+    },
+    {
+      "id": "event-meeting-ikmapap-20261112",
+      "title": "Meeting Rutin IKMAPAP",
+      "categoryId": "cat-organization",
+      "eventType": "routine_meeting",
+      "organizerId": "org-ikmapap",
+      "organizerName": "IKMAPAP (Ikatan Mahasisa Papua)",
+      "description": "Contoh agenda meeting rutin IKMAPAP (Ikatan Mahasisa Papua). Jadwal ini merupakan data simulasi untuk demonstrasi UNKLAB HUB.",
+      "date": "2026-11-12",
+      "startTime": "17:30",
+      "endTime": "18:30",
+      "location": "Ruang Kegiatan Organisasi (Lokasi Simulasi)",
+      "locationScope": "inside_unklab_simulated",
+      "targetAudience": [
+        "mahasiswa"
+      ],
+      "tags": [
+        "meeting",
+        "organisasi",
+        "kamis"
+      ],
+      "status": "approved",
+      "sourceType": "demo_seed",
+      "isDummy": true,
+      "recurrenceGroupId": "recurrence-org-ikmapap-thursday",
+      "recurrenceLabel": "Contoh pola mingguan setiap Kamis",
+      "approvedBy": "demo-seed",
+      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata."
+    },
+    {
+      "id": "event-meeting-ikmapap-20261119",
+      "title": "Meeting Rutin IKMAPAP",
+      "categoryId": "cat-organization",
+      "eventType": "routine_meeting",
+      "organizerId": "org-ikmapap",
+      "organizerName": "IKMAPAP (Ikatan Mahasisa Papua)",
+      "description": "Contoh agenda meeting rutin IKMAPAP (Ikatan Mahasisa Papua). Jadwal ini merupakan data simulasi untuk demonstrasi UNKLAB HUB.",
+      "date": "2026-11-19",
+      "startTime": "17:30",
+      "endTime": "18:30",
+      "location": "Ruang Kegiatan Organisasi (Lokasi Simulasi)",
+      "locationScope": "inside_unklab_simulated",
+      "targetAudience": [
+        "mahasiswa"
+      ],
+      "tags": [
+        "meeting",
+        "organisasi",
+        "kamis"
+      ],
+      "status": "approved",
+      "sourceType": "demo_seed",
+      "isDummy": true,
+      "recurrenceGroupId": "recurrence-org-ikmapap-thursday",
+      "recurrenceLabel": "Contoh pola mingguan setiap Kamis",
+      "approvedBy": "demo-seed",
+      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata."
+    },
+    {
+      "id": "event-meeting-ikmamalut-20261112",
+      "title": "Meeting Rutin IKMAMALUT",
+      "categoryId": "cat-organization",
+      "eventType": "routine_meeting",
+      "organizerId": "org-ikmamalut",
+      "organizerName": "IKMAMALUT (Ikatan Mahadiswa Maluku Utara)",
+      "description": "Contoh agenda meeting rutin IKMAMALUT (Ikatan Mahadiswa Maluku Utara). Jadwal ini merupakan data simulasi untuk demonstrasi UNKLAB HUB.",
+      "date": "2026-11-12",
+      "startTime": "18:00",
+      "endTime": "19:00",
+      "location": "Ruang Kegiatan Organisasi (Lokasi Simulasi)",
+      "locationScope": "inside_unklab_simulated",
+      "targetAudience": [
+        "mahasiswa"
+      ],
+      "tags": [
+        "meeting",
+        "organisasi",
+        "kamis"
+      ],
+      "status": "approved",
+      "sourceType": "demo_seed",
+      "isDummy": true,
+      "recurrenceGroupId": "recurrence-org-ikmamalut-thursday",
+      "recurrenceLabel": "Contoh pola mingguan setiap Kamis",
+      "approvedBy": "demo-seed",
+      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata."
+    },
+    {
+      "id": "event-meeting-ikmamalut-20261119",
+      "title": "Meeting Rutin IKMAMALUT",
+      "categoryId": "cat-organization",
+      "eventType": "routine_meeting",
+      "organizerId": "org-ikmamalut",
+      "organizerName": "IKMAMALUT (Ikatan Mahadiswa Maluku Utara)",
+      "description": "Contoh agenda meeting rutin IKMAMALUT (Ikatan Mahadiswa Maluku Utara). Jadwal ini merupakan data simulasi untuk demonstrasi UNKLAB HUB.",
+      "date": "2026-11-19",
+      "startTime": "18:00",
+      "endTime": "19:00",
+      "location": "Ruang Kegiatan Organisasi (Lokasi Simulasi)",
+      "locationScope": "inside_unklab_simulated",
+      "targetAudience": [
+        "mahasiswa"
+      ],
+      "tags": [
+        "meeting",
+        "organisasi",
+        "kamis"
+      ],
+      "status": "approved",
+      "sourceType": "demo_seed",
+      "isDummy": true,
+      "recurrenceGroupId": "recurrence-org-ikmamalut-thursday",
+      "recurrenceLabel": "Contoh pola mingguan setiap Kamis",
+      "approvedBy": "demo-seed",
+      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata."
+    },
+    {
+      "id": "event-meeting-ikmam-20261112",
+      "title": "Meeting Rutin IKMAM",
+      "categoryId": "cat-organization",
+      "eventType": "routine_meeting",
+      "organizerId": "org-ikmam",
+      "organizerName": "IKMAM",
+      "description": "Contoh agenda meeting rutin IKMAM. Jadwal ini merupakan data simulasi untuk demonstrasi UNKLAB HUB.",
+      "date": "2026-11-12",
+      "startTime": "18:30",
+      "endTime": "19:30",
+      "location": "Ruang Kegiatan Organisasi (Lokasi Simulasi)",
+      "locationScope": "inside_unklab_simulated",
+      "targetAudience": [
+        "mahasiswa"
+      ],
+      "tags": [
+        "meeting",
+        "organisasi",
+        "kamis"
+      ],
+      "status": "approved",
+      "sourceType": "demo_seed",
+      "isDummy": true,
+      "recurrenceGroupId": "recurrence-org-ikmam-thursday",
+      "recurrenceLabel": "Contoh pola mingguan setiap Kamis",
+      "approvedBy": "demo-seed",
+      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata."
+    },
+    {
+      "id": "event-meeting-ikmam-20261119",
+      "title": "Meeting Rutin IKMAM",
+      "categoryId": "cat-organization",
+      "eventType": "routine_meeting",
+      "organizerId": "org-ikmam",
+      "organizerName": "IKMAM",
+      "description": "Contoh agenda meeting rutin IKMAM. Jadwal ini merupakan data simulasi untuk demonstrasi UNKLAB HUB.",
+      "date": "2026-11-19",
+      "startTime": "18:30",
+      "endTime": "19:30",
+      "location": "Ruang Kegiatan Organisasi (Lokasi Simulasi)",
+      "locationScope": "inside_unklab_simulated",
+      "targetAudience": [
+        "mahasiswa"
+      ],
+      "tags": [
+        "meeting",
+        "organisasi",
+        "kamis"
+      ],
+      "status": "approved",
+      "sourceType": "demo_seed",
+      "isDummy": true,
+      "recurrenceGroupId": "recurrence-org-ikmam-thursday",
+      "recurrenceLabel": "Contoh pola mingguan setiap Kamis",
+      "approvedBy": "demo-seed",
+      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata."
+    },
+    {
+      "id": "event-meeting-imabat-20261112",
+      "title": "Meeting Rutin IMABAT",
+      "categoryId": "cat-organization",
+      "eventType": "routine_meeting",
+      "organizerId": "org-imabat",
+      "organizerName": "IMABAT (Ikatan Mahasiswa Batak)",
+      "description": "Contoh agenda meeting rutin IMABAT (Ikatan Mahasiswa Batak). Jadwal ini merupakan data simulasi untuk demonstrasi UNKLAB HUB.",
+      "date": "2026-11-12",
+      "startTime": "19:00",
+      "endTime": "20:00",
+      "location": "Ruang Kegiatan Organisasi (Lokasi Simulasi)",
+      "locationScope": "inside_unklab_simulated",
+      "targetAudience": [
+        "mahasiswa"
+      ],
+      "tags": [
+        "meeting",
+        "organisasi",
+        "kamis"
+      ],
+      "status": "approved",
+      "sourceType": "demo_seed",
+      "isDummy": true,
+      "recurrenceGroupId": "recurrence-org-imabat-thursday",
+      "recurrenceLabel": "Contoh pola mingguan setiap Kamis",
+      "approvedBy": "demo-seed",
+      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata."
+    },
+    {
+      "id": "event-meeting-imabat-20261119",
+      "title": "Meeting Rutin IMABAT",
+      "categoryId": "cat-organization",
+      "eventType": "routine_meeting",
+      "organizerId": "org-imabat",
+      "organizerName": "IMABAT (Ikatan Mahasiswa Batak)",
+      "description": "Contoh agenda meeting rutin IMABAT (Ikatan Mahasiswa Batak). Jadwal ini merupakan data simulasi untuk demonstrasi UNKLAB HUB.",
+      "date": "2026-11-19",
+      "startTime": "19:00",
+      "endTime": "20:00",
+      "location": "Ruang Kegiatan Organisasi (Lokasi Simulasi)",
+      "locationScope": "inside_unklab_simulated",
+      "targetAudience": [
+        "mahasiswa"
+      ],
+      "tags": [
+        "meeting",
+        "organisasi",
+        "kamis"
+      ],
+      "status": "approved",
+      "sourceType": "demo_seed",
+      "isDummy": true,
+      "recurrenceGroupId": "recurrence-org-imabat-thursday",
+      "recurrenceLabel": "Contoh pola mingguan setiap Kamis",
+      "approvedBy": "demo-seed",
+      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata."
+    },
+    {
+      "id": "event-meeting-ikmanut-20261112",
+      "title": "Meeting Rutin IKMANUT",
+      "categoryId": "cat-organization",
+      "eventType": "routine_meeting",
+      "organizerId": "org-ikmanut",
+      "organizerName": "IKMANUT (Ikatan Mahasiswa Nusa Utara)",
+      "description": "Contoh agenda meeting rutin IKMANUT (Ikatan Mahasiswa Nusa Utara). Jadwal ini merupakan data simulasi untuk demonstrasi UNKLAB HUB.",
+      "date": "2026-11-12",
+      "startTime": "16:00",
+      "endTime": "17:30",
+      "location": "Ruang Kegiatan Organisasi (Lokasi Simulasi)",
+      "locationScope": "inside_unklab_simulated",
+      "targetAudience": [
+        "mahasiswa"
+      ],
+      "tags": [
+        "meeting",
+        "organisasi",
+        "kamis"
+      ],
+      "status": "approved",
+      "sourceType": "demo_seed",
+      "isDummy": true,
+      "recurrenceGroupId": "recurrence-org-ikmanut-thursday",
+      "recurrenceLabel": "Contoh pola mingguan setiap Kamis",
+      "approvedBy": "demo-seed",
+      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata."
+    },
+    {
+      "id": "event-meeting-ikmanut-20261119",
+      "title": "Meeting Rutin IKMANUT",
+      "categoryId": "cat-organization",
+      "eventType": "routine_meeting",
+      "organizerId": "org-ikmanut",
+      "organizerName": "IKMANUT (Ikatan Mahasiswa Nusa Utara)",
+      "description": "Contoh agenda meeting rutin IKMANUT (Ikatan Mahasiswa Nusa Utara). Jadwal ini merupakan data simulasi untuk demonstrasi UNKLAB HUB.",
+      "date": "2026-11-19",
+      "startTime": "16:00",
+      "endTime": "17:30",
+      "location": "Ruang Kegiatan Organisasi (Lokasi Simulasi)",
+      "locationScope": "inside_unklab_simulated",
+      "targetAudience": [
+        "mahasiswa"
+      ],
+      "tags": [
+        "meeting",
+        "organisasi",
+        "kamis"
+      ],
+      "status": "approved",
+      "sourceType": "demo_seed",
+      "isDummy": true,
+      "recurrenceGroupId": "recurrence-org-ikmanut-thursday",
+      "recurrenceLabel": "Contoh pola mingguan setiap Kamis",
+      "approvedBy": "demo-seed",
+      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata."
+    },
+    {
+      "id": "event-meeting-genbi-20261112",
+      "title": "Meeting Rutin GENBI",
+      "categoryId": "cat-organization",
+      "eventType": "routine_meeting",
+      "organizerId": "org-genbi",
+      "organizerName": "GENBI",
+      "description": "Contoh agenda meeting rutin GENBI. Jadwal ini merupakan data simulasi untuk demonstrasi UNKLAB HUB.",
+      "date": "2026-11-12",
+      "startTime": "17:00",
+      "endTime": "18:30",
+      "location": "Ruang Kegiatan Organisasi (Lokasi Simulasi)",
+      "locationScope": "inside_unklab_simulated",
+      "targetAudience": [
+        "mahasiswa"
+      ],
+      "tags": [
+        "meeting",
+        "organisasi",
+        "kamis"
+      ],
+      "status": "approved",
+      "sourceType": "demo_seed",
+      "isDummy": true,
+      "recurrenceGroupId": "recurrence-org-genbi-thursday",
+      "recurrenceLabel": "Contoh pola mingguan setiap Kamis",
+      "approvedBy": "demo-seed",
+      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata."
+    },
+    {
+      "id": "event-meeting-genbi-20261119",
+      "title": "Meeting Rutin GENBI",
+      "categoryId": "cat-organization",
+      "eventType": "routine_meeting",
+      "organizerId": "org-genbi",
+      "organizerName": "GENBI",
+      "description": "Contoh agenda meeting rutin GENBI. Jadwal ini merupakan data simulasi untuk demonstrasi UNKLAB HUB.",
+      "date": "2026-11-19",
+      "startTime": "17:00",
+      "endTime": "18:30",
+      "location": "Ruang Kegiatan Organisasi (Lokasi Simulasi)",
+      "locationScope": "inside_unklab_simulated",
+      "targetAudience": [
+        "mahasiswa"
+      ],
+      "tags": [
+        "meeting",
+        "organisasi",
+        "kamis"
+      ],
+      "status": "approved",
+      "sourceType": "demo_seed",
+      "isDummy": true,
+      "recurrenceGroupId": "recurrence-org-genbi-thursday",
+      "recurrenceLabel": "Contoh pola mingguan setiap Kamis",
+      "approvedBy": "demo-seed",
+      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata."
+    },
+    {
+      "id": "event-choir-tuc-anniversary",
+      "title": "TUC Anniversary Celebration",
+      "categoryId": "cat-choir",
+      "eventType": "anniversary",
+      "organizerId": "choir-tuc",
+      "organizerName": "TUC (The Unklab Choir)",
+      "description": "Perayaan anniversary TUC sebagai contoh event penting choir. Tanggal, waktu, dan lokasi merupakan data simulasi.",
+      "date": "2026-11-21",
+      "startTime": "18:00",
+      "endTime": "20:00",
+      "location": "Aula Kampus UNKLAB (Lokasi Simulasi)",
+      "locationScope": "inside_unklab_simulated",
+      "targetAudience": [
+        "mahasiswa",
+        "dosen-staff"
+      ],
+      "tags": [
+        "choir",
+        "anniversary"
+      ],
+      "status": "approved",
+      "sourceType": "demo_seed",
+      "isDummy": true,
+      "approvedBy": "demo-seed",
+      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata."
+    },
+    {
+      "id": "event-choir-tufc-homecoming",
+      "title": "TUFC Homecoming",
+      "categoryId": "cat-choir",
+      "eventType": "homecoming",
+      "organizerId": "choir-tufc",
+      "organizerName": "TUFC (The Unklab FEB Choir)",
+      "description": "Kegiatan homecoming TUFC sebagai contoh event penting choir. Tanggal, waktu, dan lokasi merupakan data simulasi.",
+      "date": "2026-11-28",
+      "startTime": "17:00",
+      "endTime": "20:00",
+      "location": "Area Kampus UNKLAB (Lokasi Simulasi)",
+      "locationScope": "inside_unklab_simulated",
+      "targetAudience": [
+        "mahasiswa",
+        "dosen-staff"
+      ],
+      "tags": [
+        "choir",
+        "homecoming"
+      ],
+      "status": "approved",
+      "sourceType": "demo_seed",
+      "isDummy": true,
+      "approvedBy": "demo-seed",
+      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata."
+    },
+    {
+      "id": "event-choir-vocs-service-in",
+      "title": "VOCS Pelayanan di Dalam UNKLAB",
+      "categoryId": "cat-choir",
+      "eventType": "ministry_inside_unklab",
+      "organizerId": "choir-vocs",
+      "organizerName": "VOCS choir unklab",
+      "description": "Contoh pelayanan atau penampilan VOCS di dalam lingkungan UNKLAB. Tanggal, waktu, dan lokasi merupakan data simulasi.",
+      "date": "2026-11-14",
+      "startTime": "16:00",
+      "endTime": "18:00",
+      "location": "Area Kampus UNKLAB (Lokasi Simulasi)",
+      "locationScope": "inside_unklab_simulated",
+      "targetAudience": [
+        "mahasiswa",
+        "dosen-staff"
+      ],
+      "tags": [
+        "choir",
+        "ministry inside unklab"
+      ],
+      "status": "approved",
+      "sourceType": "demo_seed",
+      "isDummy": true,
+      "approvedBy": "demo-seed",
+      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata."
+    },
+    {
+      "id": "event-choir-tuec-service-out",
+      "title": "TUEC Pelayanan di Luar UNKLAB",
+      "categoryId": "cat-choir",
+      "eventType": "ministry_outside_unklab",
+      "organizerId": "choir-tuec",
+      "organizerName": "The Unklab Echo Choir (TUEC)",
+      "description": "Contoh pelayanan TUEC di luar lingkungan UNKLAB. Tanggal, waktu, dan lokasi merupakan data simulasi.",
+      "date": "2026-11-22",
+      "startTime": "10:00",
+      "endTime": "12:00",
+      "location": "Lokasi Mitra di Luar Kampus (Lokasi Simulasi)",
+      "locationScope": "outside_unklab_simulated",
+      "targetAudience": [
+        "mahasiswa",
+        "dosen-staff"
+      ],
+      "tags": [
+        "choir",
+        "ministry outside unklab"
+      ],
+      "status": "approved",
+      "sourceType": "demo_seed",
+      "isDummy": true,
+      "approvedBy": "demo-seed",
+      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata."
+    },
+    {
+      "id": "event-choir-nursing-anniversary",
+      "title": "The Unklab Nursing Choir Anniversary",
+      "categoryId": "cat-choir",
+      "eventType": "anniversary",
+      "organizerId": "choir-nursing",
+      "organizerName": "The Unklab Nursing Choir",
+      "description": "Contoh kegiatan anniversary The Unklab Nursing Choir. Tanggal, waktu, dan lokasi merupakan data simulasi.",
+      "date": "2026-12-05",
+      "startTime": "18:00",
+      "endTime": "20:00",
+      "location": "Area Kampus UNKLAB (Lokasi Simulasi)",
+      "locationScope": "inside_unklab_simulated",
+      "targetAudience": [
+        "mahasiswa",
+        "dosen-staff"
+      ],
+      "tags": [
+        "choir",
+        "anniversary"
+      ],
+      "status": "approved",
+      "sourceType": "demo_seed",
+      "isDummy": true,
+      "approvedBy": "demo-seed",
+      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata."
+    },
+    {
+      "id": "event-choir-tot-service",
+      "title": "TOT Choir Ministry",
+      "categoryId": "cat-choir",
+      "eventType": "ministry_inside_unklab",
+      "organizerId": "choir-tot",
+      "organizerName": "TOT (teachers of tomorrow)",
+      "description": "Contoh pelayanan atau penampilan TOT dari FKIP. Tanggal, waktu, dan lokasi merupakan data simulasi.",
+      "date": "2026-12-12",
+      "startTime": "17:00",
+      "endTime": "19:00",
+      "location": "Area Kampus UNKLAB (Lokasi Simulasi)",
+      "locationScope": "inside_unklab_simulated",
+      "targetAudience": [
+        "mahasiswa",
+        "dosen-staff"
+      ],
+      "tags": [
+        "choir",
+        "ministry inside unklab"
+      ],
+      "status": "approved",
+      "sourceType": "demo_seed",
+      "isDummy": true,
+      "approvedBy": "demo-seed",
+      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata."
+    },
+    {
+      "id": "event-dorm-open-house-20261121",
+      "title": "OPEN HOUSE",
+      "categoryId": "cat-dormitory",
+      "eventType": "dormitory_activity",
+      "organizerId": "dorm-open-house",
+      "organizerName": "Kegiatan Asrama",
+      "description": "Open House sebagai contoh kegiatan asrama pada hari Sabbath/Sabtu. Tanggal, jam, dan lokasi merupakan data simulasi.",
+      "date": "2026-11-21",
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "location": "Area Asrama (Lokasi Simulasi)",
+      "locationScope": "inside_unklab_simulated",
+      "targetAudience": [
+        "residents_all_dormitories",
+        "students"
+      ],
+      "tags": [
+        "asrama",
+        "open-house",
+        "sabbath"
+      ],
+      "status": "approved",
+      "sourceType": "demo_seed",
+      "isDummy": true,
+      "approvedBy": "demo-seed",
+      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata.",
+      "activityId": "dorm-open-house",
+      "activityName": "OPEN HOUSE",
+      "dormitoryIds": [
+        "dormitory-jasmine-1",
+        "dormitory-jasmine-2",
+        "dormitory-guest-house",
+        "dormitory-genzet",
+        "dormitory-annex",
+        "dormitory-bougenvile",
+        "dormitory-crystal",
+        "dormitory-edelweis"
+      ],
+      "recurrenceLabel": "Pola kegiatan contoh: SATURDAY",
+      "schedulePatternStatus": "dummy_pattern"
+    },
+    {
+      "id": "event-dorm-olahraga-20261115",
+      "title": "OLAHRAGA BERSAMA ANTAR ASRAMA",
+      "categoryId": "cat-dormitory",
+      "eventType": "dormitory_activity",
+      "organizerId": "dorm-olahraga",
+      "organizerName": "Kegiatan Asrama",
+      "description": "Olahraga bersama antar asrama sebagai contoh kegiatan hari Minggu. Tanggal, jam, dan lokasi merupakan data simulasi.",
+      "date": "2026-11-15",
+      "startTime": "07:00",
+      "endTime": "09:00",
+      "location": "Lapangan Kampus (Lokasi Simulasi)",
+      "locationScope": "inside_unklab_simulated",
+      "targetAudience": [
+        "residents_all_dormitories",
+        "students"
+      ],
+      "tags": [
+        "asrama",
+        "olahraga",
+        "minggu"
+      ],
+      "status": "approved",
+      "sourceType": "demo_seed",
+      "isDummy": true,
+      "approvedBy": "demo-seed",
+      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata.",
+      "activityId": "dorm-olahraga",
+      "activityName": "OLAHRAGA BERSAMA ANTAR ASRAMA",
+      "dormitoryIds": [
+        "dormitory-jasmine-1",
+        "dormitory-jasmine-2",
+        "dormitory-guest-house",
+        "dormitory-genzet",
+        "dormitory-annex",
+        "dormitory-bougenvile",
+        "dormitory-crystal",
+        "dormitory-edelweis"
+      ],
+      "recurrenceLabel": "Pola kegiatan contoh: SUNDAY",
+      "schedulePatternStatus": "dummy_pattern"
+    },
+    {
+      "id": "event-dorm-mix-formal-20261112",
+      "title": "MIX FORMAL",
+      "categoryId": "cat-dormitory",
+      "eventType": "dormitory_activity",
+      "organizerId": "dorm-mix-formal",
+      "organizerName": "Kegiatan Asrama",
+      "description": "Mix Formal sebagai contoh kegiatan asrama pada hari Kamis. Tanggal, jam, dan lokasi merupakan data simulasi.",
+      "date": "2026-11-12",
+      "startTime": "18:00",
+      "endTime": "20:00",
+      "location": "Area Kegiatan Asrama (Lokasi Simulasi)",
+      "locationScope": "inside_unklab_simulated",
+      "targetAudience": [
+        "residents_all_dormitories",
+        "students"
+      ],
+      "tags": [
+        "asrama",
+        "mix-formal",
+        "kamis"
+      ],
+      "status": "approved",
+      "sourceType": "demo_seed",
+      "isDummy": true,
+      "approvedBy": "demo-seed",
+      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata.",
+      "activityId": "dorm-mix-formal",
+      "activityName": "MIX FORMAL",
+      "dormitoryIds": [
+        "dormitory-jasmine-1",
+        "dormitory-jasmine-2",
+        "dormitory-guest-house",
+        "dormitory-genzet",
+        "dormitory-annex",
+        "dormitory-bougenvile",
+        "dormitory-crystal",
+        "dormitory-edelweis"
+      ],
+      "recurrenceLabel": "Pola kegiatan contoh: THURSDAY",
+      "schedulePatternStatus": "dummy_pattern"
+    },
+    {
+      "id": "event-dorm-worship-20261119",
+      "title": "IBADAH WORSHIP BERSAMA DENGAN ASRAMA LAIN",
+      "categoryId": "cat-dormitory",
+      "eventType": "dormitory_activity",
+      "organizerId": "dorm-worship",
+      "organizerName": "Kegiatan Asrama",
+      "description": "Ibadah Worship bersama dengan asrama lain sebagai contoh kegiatan hari Kamis. Tanggal, jam, dan lokasi merupakan data simulasi.",
+      "date": "2026-11-19",
+      "startTime": "17:30",
+      "endTime": "19:00",
+      "location": "Ruang Ibadah (Lokasi Simulasi)",
+      "locationScope": "inside_unklab_simulated",
+      "targetAudience": [
+        "residents_all_dormitories",
+        "students"
+      ],
+      "tags": [
+        "asrama",
+        "worship",
+        "kamis"
+      ],
+      "status": "approved",
+      "sourceType": "demo_seed",
+      "isDummy": true,
+      "approvedBy": "demo-seed",
+      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata.",
+      "activityId": "dorm-worship",
+      "activityName": "IBADAH WORSHIP BERSAMA DENGAN ASRAMA LAIN",
+      "dormitoryIds": [
+        "dormitory-jasmine-1",
+        "dormitory-jasmine-2",
+        "dormitory-guest-house",
+        "dormitory-genzet",
+        "dormitory-annex",
+        "dormitory-bougenvile",
+        "dormitory-crystal",
+        "dormitory-edelweis"
+      ],
+      "recurrenceLabel": "Pola kegiatan contoh: THURSDAY",
+      "schedulePatternStatus": "dummy_pattern"
+    },
+    {
+      "id": "event-dorm-study-time-20261116",
+      "title": "WAKTU UNTUK STUDY DI (ASRAMA/DINING)",
+      "categoryId": "cat-dormitory",
+      "eventType": "dormitory_activity",
+      "organizerId": "dorm-study-time",
+      "organizerName": "Kegiatan Asrama",
+      "description": "Waktu belajar di asrama atau dining sebagai contoh jadwal rutin hari Senin. Tanggal, jam, dan lokasi merupakan data simulasi.",
+      "date": "2026-11-16",
+      "startTime": "19:00",
+      "endTime": "21:00",
+      "location": "Area Belajar Asrama/Dining (Lokasi Simulasi)",
+      "locationScope": "inside_unklab_simulated",
+      "targetAudience": [
+        "residents_all_dormitories",
+        "students"
+      ],
+      "tags": [
+        "asrama",
+        "study-time",
+        "senin"
+      ],
+      "status": "approved",
+      "sourceType": "demo_seed",
+      "isDummy": true,
+      "approvedBy": "demo-seed",
+      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata.",
+      "activityId": "dorm-study-time",
+      "activityName": "WAKTU UNTUK STUDY DI (ASRAMA/DINING)",
+      "dormitoryIds": [
+        "dormitory-jasmine-1",
+        "dormitory-jasmine-2",
+        "dormitory-guest-house",
+        "dormitory-genzet",
+        "dormitory-annex",
+        "dormitory-bougenvile",
+        "dormitory-crystal",
+        "dormitory-edelweis"
+      ],
+      "recurrenceGroupId": "recurrence-dorm-study-monday-tuesday",
+      "recurrenceLabel": "Contoh pola setiap Senin dan Selasa",
+      "schedulePatternStatus": "dummy_pattern"
+    },
+    {
+      "id": "event-dorm-study-time-20261117",
+      "title": "WAKTU UNTUK STUDY DI (ASRAMA/DINING)",
+      "categoryId": "cat-dormitory",
+      "eventType": "dormitory_activity",
+      "organizerId": "dorm-study-time",
+      "organizerName": "Kegiatan Asrama",
+      "description": "Waktu belajar di asrama atau dining sebagai contoh jadwal rutin hari Selasa. Tanggal, jam, dan lokasi merupakan data simulasi.",
+      "date": "2026-11-17",
+      "startTime": "19:00",
+      "endTime": "21:00",
+      "location": "Area Belajar Asrama/Dining (Lokasi Simulasi)",
+      "locationScope": "inside_unklab_simulated",
+      "targetAudience": [
+        "residents_all_dormitories",
+        "students"
+      ],
+      "tags": [
+        "asrama",
+        "study-time",
+        "selasa"
+      ],
+      "status": "approved",
+      "sourceType": "demo_seed",
+      "isDummy": true,
+      "approvedBy": "demo-seed",
+      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata.",
+      "activityId": "dorm-study-time",
+      "activityName": "WAKTU UNTUK STUDY DI (ASRAMA/DINING)",
+      "dormitoryIds": [
+        "dormitory-jasmine-1",
+        "dormitory-jasmine-2",
+        "dormitory-guest-house",
+        "dormitory-genzet",
+        "dormitory-annex",
+        "dormitory-bougenvile",
+        "dormitory-crystal",
+        "dormitory-edelweis"
+      ],
+      "recurrenceGroupId": "recurrence-dorm-study-monday-tuesday",
+      "recurrenceLabel": "Contoh pola setiap Senin dan Selasa",
+      "schedulePatternStatus": "dummy_pattern"
+    },
+    {
+      "id": "event-dorm-study-time-20261123",
+      "title": "WAKTU UNTUK STUDY DI (ASRAMA/DINING)",
+      "categoryId": "cat-dormitory",
+      "eventType": "dormitory_activity",
+      "organizerId": "dorm-study-time",
+      "organizerName": "Kegiatan Asrama",
+      "description": "Waktu belajar di asrama atau dining sebagai contoh jadwal rutin hari Senin. Tanggal, jam, dan lokasi merupakan data simulasi.",
+      "date": "2026-11-23",
+      "startTime": "19:00",
+      "endTime": "21:00",
+      "location": "Area Belajar Asrama/Dining (Lokasi Simulasi)",
+      "locationScope": "inside_unklab_simulated",
+      "targetAudience": [
+        "residents_all_dormitories",
+        "students"
+      ],
+      "tags": [
+        "asrama",
+        "study-time",
+        "senin"
+      ],
+      "status": "approved",
+      "sourceType": "demo_seed",
+      "isDummy": true,
+      "approvedBy": "demo-seed",
+      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata.",
+      "activityId": "dorm-study-time",
+      "activityName": "WAKTU UNTUK STUDY DI (ASRAMA/DINING)",
+      "dormitoryIds": [
+        "dormitory-jasmine-1",
+        "dormitory-jasmine-2",
+        "dormitory-guest-house",
+        "dormitory-genzet",
+        "dormitory-annex",
+        "dormitory-bougenvile",
+        "dormitory-crystal",
+        "dormitory-edelweis"
+      ],
+      "recurrenceGroupId": "recurrence-dorm-study-monday-tuesday",
+      "recurrenceLabel": "Contoh pola setiap Senin dan Selasa",
+      "schedulePatternStatus": "dummy_pattern"
+    },
+    {
+      "id": "event-dorm-study-time-20261124",
+      "title": "WAKTU UNTUK STUDY DI (ASRAMA/DINING)",
+      "categoryId": "cat-dormitory",
+      "eventType": "dormitory_activity",
+      "organizerId": "dorm-study-time",
+      "organizerName": "Kegiatan Asrama",
+      "description": "Waktu belajar di asrama atau dining sebagai contoh jadwal rutin hari Selasa. Tanggal, jam, dan lokasi merupakan data simulasi.",
+      "date": "2026-11-24",
+      "startTime": "19:00",
+      "endTime": "21:00",
+      "location": "Area Belajar Asrama/Dining (Lokasi Simulasi)",
+      "locationScope": "inside_unklab_simulated",
+      "targetAudience": [
+        "residents_all_dormitories",
+        "students"
+      ],
+      "tags": [
+        "asrama",
+        "study-time",
+        "selasa"
+      ],
+      "status": "approved",
+      "sourceType": "demo_seed",
+      "isDummy": true,
+      "approvedBy": "demo-seed",
+      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata.",
+      "activityId": "dorm-study-time",
+      "activityName": "WAKTU UNTUK STUDY DI (ASRAMA/DINING)",
+      "dormitoryIds": [
+        "dormitory-jasmine-1",
+        "dormitory-jasmine-2",
+        "dormitory-guest-house",
+        "dormitory-genzet",
+        "dormitory-annex",
+        "dormitory-bougenvile",
+        "dormitory-crystal",
+        "dormitory-edelweis"
+      ],
+      "recurrenceGroupId": "recurrence-dorm-study-monday-tuesday",
+      "recurrenceLabel": "Contoh pola setiap Senin dan Selasa",
+      "schedulePatternStatus": "dummy_pattern"
+    },
+    {
+      "id": "event-worship-midweek-20261111",
+      "title": "IBADAH MIDWEEK",
+      "categoryId": "cat-religious",
+      "eventType": "worship_service",
+      "organizerId": "worship-midweek",
+      "organizerName": "Ibadah Asrama",
+      "description": "Ibadah Midweek untuk seluruh penghuni asrama dan outsider dekat. Tanggal mengikuti contoh pola Rabu; jam dan lokasi adalah simulasi.",
+      "date": "2026-11-11",
+      "startTime": "18:00",
+      "endTime": "19:00",
+      "location": "Tempat Ibadah (Lokasi Simulasi)",
+      "locationScope": "inside_unklab_simulated",
+      "targetAudience": [
+        "residents_all_dormitories",
+        "outsider_near"
+      ],
+      "tags": [
+        "ibadah",
+        "midweek",
+        "rabu"
+      ],
+      "status": "approved",
+      "sourceType": "demo_seed",
+      "isDummy": true,
+      "approvedBy": "demo-seed",
+      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata.",
+      "worshipScheduleId": "worship-midweek",
+      "dormitoryIds": [
+        "dormitory-jasmine-1",
+        "dormitory-jasmine-2",
+        "dormitory-guest-house",
+        "dormitory-genzet",
+        "dormitory-annex",
+        "dormitory-bougenvile",
+        "dormitory-crystal",
+        "dormitory-edelweis"
+      ],
+      "recurrenceGroupId": "recurrence-worship-midweek-wednesday",
+      "recurrenceLabel": "Contoh pola mingguan setiap Rabu",
+      "schedulePatternStatus": "dummy_pattern"
+    },
+    {
+      "id": "event-worship-midweek-20261118",
+      "title": "IBADAH MIDWEEK",
+      "categoryId": "cat-religious",
+      "eventType": "worship_service",
+      "organizerId": "worship-midweek",
+      "organizerName": "Ibadah Asrama",
+      "description": "Ibadah Midweek untuk seluruh penghuni asrama dan outsider dekat. Tanggal mengikuti contoh pola Rabu; jam dan lokasi adalah simulasi.",
+      "date": "2026-11-18",
+      "startTime": "18:00",
+      "endTime": "19:00",
+      "location": "Tempat Ibadah (Lokasi Simulasi)",
+      "locationScope": "inside_unklab_simulated",
+      "targetAudience": [
+        "residents_all_dormitories",
+        "outsider_near"
+      ],
+      "tags": [
+        "ibadah",
+        "midweek",
+        "rabu"
+      ],
+      "status": "approved",
+      "sourceType": "demo_seed",
+      "isDummy": true,
+      "approvedBy": "demo-seed",
+      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata.",
+      "worshipScheduleId": "worship-midweek",
+      "dormitoryIds": [
+        "dormitory-jasmine-1",
+        "dormitory-jasmine-2",
+        "dormitory-guest-house",
+        "dormitory-genzet",
+        "dormitory-annex",
+        "dormitory-bougenvile",
+        "dormitory-crystal",
+        "dormitory-edelweis"
+      ],
+      "recurrenceGroupId": "recurrence-worship-midweek-wednesday",
+      "recurrenceLabel": "Contoh pola mingguan setiap Rabu",
+      "schedulePatternStatus": "dummy_pattern"
+    },
+    {
+      "id": "event-worship-midweek-20261125",
+      "title": "IBADAH MIDWEEK",
+      "categoryId": "cat-religious",
+      "eventType": "worship_service",
+      "organizerId": "worship-midweek",
+      "organizerName": "Ibadah Asrama",
+      "description": "Ibadah Midweek untuk seluruh penghuni asrama dan outsider dekat. Tanggal mengikuti contoh pola Rabu; jam dan lokasi adalah simulasi.",
+      "date": "2026-11-25",
+      "startTime": "18:00",
+      "endTime": "19:00",
+      "location": "Tempat Ibadah (Lokasi Simulasi)",
+      "locationScope": "inside_unklab_simulated",
+      "targetAudience": [
+        "residents_all_dormitories",
+        "outsider_near"
+      ],
+      "tags": [
+        "ibadah",
+        "midweek",
+        "rabu"
+      ],
+      "status": "approved",
+      "sourceType": "demo_seed",
+      "isDummy": true,
+      "approvedBy": "demo-seed",
+      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata.",
+      "worshipScheduleId": "worship-midweek",
+      "dormitoryIds": [
+        "dormitory-jasmine-1",
+        "dormitory-jasmine-2",
+        "dormitory-guest-house",
+        "dormitory-genzet",
+        "dormitory-annex",
+        "dormitory-bougenvile",
+        "dormitory-crystal",
+        "dormitory-edelweis"
+      ],
+      "recurrenceGroupId": "recurrence-worship-midweek-wednesday",
+      "recurrenceLabel": "Contoh pola mingguan setiap Rabu",
+      "schedulePatternStatus": "dummy_pattern"
+    },
+    {
+      "id": "event-worship-vesper-20261113",
+      "title": "IBADAH VESPER",
+      "categoryId": "cat-religious",
+      "eventType": "worship_service",
+      "organizerId": "worship-vesper",
+      "organizerName": "Ibadah Asrama",
+      "description": "Ibadah Vesper untuk seluruh penghuni asrama dan outsider dekat. Tanggal mengikuti contoh pola Jumat; jam dan lokasi adalah simulasi.",
+      "date": "2026-11-13",
+      "startTime": "18:00",
+      "endTime": "19:00",
+      "location": "Tempat Ibadah (Lokasi Simulasi)",
+      "locationScope": "inside_unklab_simulated",
+      "targetAudience": [
+        "residents_all_dormitories",
+        "outsider_near"
+      ],
+      "tags": [
+        "ibadah",
+        "vesper",
+        "jumat"
+      ],
+      "status": "approved",
+      "sourceType": "demo_seed",
+      "isDummy": true,
+      "approvedBy": "demo-seed",
+      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata.",
+      "worshipScheduleId": "worship-vesper",
+      "dormitoryIds": [
+        "dormitory-jasmine-1",
+        "dormitory-jasmine-2",
+        "dormitory-guest-house",
+        "dormitory-genzet",
+        "dormitory-annex",
+        "dormitory-bougenvile",
+        "dormitory-crystal",
+        "dormitory-edelweis"
+      ],
+      "recurrenceGroupId": "recurrence-worship-vesper-friday",
+      "recurrenceLabel": "Contoh pola mingguan setiap Jumat",
+      "schedulePatternStatus": "dummy_pattern"
+    },
+    {
+      "id": "event-worship-vesper-20261120",
+      "title": "IBADAH VESPER",
+      "categoryId": "cat-religious",
+      "eventType": "worship_service",
+      "organizerId": "worship-vesper",
+      "organizerName": "Ibadah Asrama",
+      "description": "Ibadah Vesper untuk seluruh penghuni asrama dan outsider dekat. Tanggal mengikuti contoh pola Jumat; jam dan lokasi adalah simulasi.",
+      "date": "2026-11-20",
+      "startTime": "18:00",
+      "endTime": "19:00",
+      "location": "Tempat Ibadah (Lokasi Simulasi)",
+      "locationScope": "inside_unklab_simulated",
+      "targetAudience": [
+        "residents_all_dormitories",
+        "outsider_near"
+      ],
+      "tags": [
+        "ibadah",
+        "vesper",
+        "jumat"
+      ],
+      "status": "approved",
+      "sourceType": "demo_seed",
+      "isDummy": true,
+      "approvedBy": "demo-seed",
+      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata.",
+      "worshipScheduleId": "worship-vesper",
+      "dormitoryIds": [
+        "dormitory-jasmine-1",
+        "dormitory-jasmine-2",
+        "dormitory-guest-house",
+        "dormitory-genzet",
+        "dormitory-annex",
+        "dormitory-bougenvile",
+        "dormitory-crystal",
+        "dormitory-edelweis"
+      ],
+      "recurrenceGroupId": "recurrence-worship-vesper-friday",
+      "recurrenceLabel": "Contoh pola mingguan setiap Jumat",
+      "schedulePatternStatus": "dummy_pattern"
+    },
+    {
+      "id": "event-worship-vesper-20261127",
+      "title": "IBADAH VESPER",
+      "categoryId": "cat-religious",
+      "eventType": "worship_service",
+      "organizerId": "worship-vesper",
+      "organizerName": "Ibadah Asrama",
+      "description": "Ibadah Vesper untuk seluruh penghuni asrama dan outsider dekat. Tanggal mengikuti contoh pola Jumat; jam dan lokasi adalah simulasi.",
+      "date": "2026-11-27",
+      "startTime": "18:00",
+      "endTime": "19:00",
+      "location": "Tempat Ibadah (Lokasi Simulasi)",
+      "locationScope": "inside_unklab_simulated",
+      "targetAudience": [
+        "residents_all_dormitories",
+        "outsider_near"
+      ],
+      "tags": [
+        "ibadah",
+        "vesper",
+        "jumat"
+      ],
+      "status": "approved",
+      "sourceType": "demo_seed",
+      "isDummy": true,
+      "approvedBy": "demo-seed",
+      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata.",
+      "worshipScheduleId": "worship-vesper",
+      "dormitoryIds": [
+        "dormitory-jasmine-1",
+        "dormitory-jasmine-2",
+        "dormitory-guest-house",
+        "dormitory-genzet",
+        "dormitory-annex",
+        "dormitory-bougenvile",
+        "dormitory-crystal",
+        "dormitory-edelweis"
+      ],
+      "recurrenceGroupId": "recurrence-worship-vesper-friday",
+      "recurrenceLabel": "Contoh pola mingguan setiap Jumat",
+      "schedulePatternStatus": "dummy_pattern"
+    },
+    {
+      "id": "event-worship-sabbath-20261114",
+      "title": "IBADAH SABBATH",
+      "categoryId": "cat-religious",
+      "eventType": "worship_service",
+      "organizerId": "worship-sabbath",
+      "organizerName": "Ibadah Asrama",
+      "description": "Ibadah Sabbath untuk seluruh penghuni asrama, outsider dekat, dan outsider jauh. Contoh tanggal ini wajib diperiksa terhadap Kalender Akademik UNKLAB 2026; event tidak dijadwalkan jika tanggal termasuk long weekend. Jam dan lokasi adalah simulasi.",
+      "date": "2026-11-14",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "location": "Tempat Ibadah (Lokasi Simulasi)",
+      "locationScope": "inside_unklab_simulated",
+      "targetAudience": [
+        "residents_all_dormitories",
+        "outsider_near",
+        "outsider_far"
+      ],
+      "tags": [
+        "ibadah",
+        "sabbath",
+        "sabtu"
+      ],
+      "status": "approved",
+      "sourceType": "demo_seed",
+      "isDummy": true,
+      "approvedBy": "demo-seed",
+      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata.",
+      "worshipScheduleId": "worship-sabbath",
+      "dormitoryIds": [
+        "dormitory-jasmine-1",
+        "dormitory-jasmine-2",
+        "dormitory-guest-house",
+        "dormitory-genzet",
+        "dormitory-annex",
+        "dormitory-bougenvile",
+        "dormitory-crystal",
+        "dormitory-edelweis"
+      ],
+      "recurrenceGroupId": "recurrence-worship-sabbath-saturday",
+      "recurrenceLabel": "Contoh pola mingguan setiap Sabbath/Sabtu",
+      "schedulePatternStatus": "dummy_pattern",
+      "skipIfLongWeekend": true,
+      "longWeekendCheckSource": "academic-calendar-2026",
+      "longWeekendCheckStatus": "pending_academic_calendar_2026"
+    },
+    {
+      "id": "event-worship-sabbath-20261121",
+      "title": "IBADAH SABBATH",
+      "categoryId": "cat-religious",
+      "eventType": "worship_service",
+      "organizerId": "worship-sabbath",
+      "organizerName": "Ibadah Asrama",
+      "description": "Ibadah Sabbath untuk seluruh penghuni asrama, outsider dekat, dan outsider jauh. Contoh tanggal ini wajib diperiksa terhadap Kalender Akademik UNKLAB 2026; event tidak dijadwalkan jika tanggal termasuk long weekend. Jam dan lokasi adalah simulasi.",
+      "date": "2026-11-21",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "location": "Tempat Ibadah (Lokasi Simulasi)",
+      "locationScope": "inside_unklab_simulated",
+      "targetAudience": [
+        "residents_all_dormitories",
+        "outsider_near",
+        "outsider_far"
+      ],
+      "tags": [
+        "ibadah",
+        "sabbath",
+        "sabtu"
+      ],
+      "status": "approved",
+      "sourceType": "demo_seed",
+      "isDummy": true,
+      "approvedBy": "demo-seed",
+      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata.",
+      "worshipScheduleId": "worship-sabbath",
+      "dormitoryIds": [
+        "dormitory-jasmine-1",
+        "dormitory-jasmine-2",
+        "dormitory-guest-house",
+        "dormitory-genzet",
+        "dormitory-annex",
+        "dormitory-bougenvile",
+        "dormitory-crystal",
+        "dormitory-edelweis"
+      ],
+      "recurrenceGroupId": "recurrence-worship-sabbath-saturday",
+      "recurrenceLabel": "Contoh pola mingguan setiap Sabbath/Sabtu",
+      "schedulePatternStatus": "dummy_pattern",
+      "skipIfLongWeekend": true,
+      "longWeekendCheckSource": "academic-calendar-2026",
+      "longWeekendCheckStatus": "pending_academic_calendar_2026"
+    },
+    {
+      "id": "event-worship-sabbath-20261128",
+      "title": "IBADAH SABBATH",
+      "categoryId": "cat-religious",
+      "eventType": "worship_service",
+      "organizerId": "worship-sabbath",
+      "organizerName": "Ibadah Asrama",
+      "description": "Ibadah Sabbath untuk seluruh penghuni asrama, outsider dekat, dan outsider jauh. Contoh tanggal ini wajib diperiksa terhadap Kalender Akademik UNKLAB 2026; event tidak dijadwalkan jika tanggal termasuk long weekend. Jam dan lokasi adalah simulasi.",
+      "date": "2026-11-28",
+      "startTime": "09:00",
+      "endTime": "11:00",
+      "location": "Tempat Ibadah (Lokasi Simulasi)",
+      "locationScope": "inside_unklab_simulated",
+      "targetAudience": [
+        "residents_all_dormitories",
+        "outsider_near",
+        "outsider_far"
+      ],
+      "tags": [
+        "ibadah",
+        "sabbath",
+        "sabtu"
+      ],
+      "status": "approved",
+      "sourceType": "demo_seed",
+      "isDummy": true,
+      "approvedBy": "demo-seed",
+      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata.",
+      "worshipScheduleId": "worship-sabbath",
+      "dormitoryIds": [
+        "dormitory-jasmine-1",
+        "dormitory-jasmine-2",
+        "dormitory-guest-house",
+        "dormitory-genzet",
+        "dormitory-annex",
+        "dormitory-bougenvile",
+        "dormitory-crystal",
+        "dormitory-edelweis"
+      ],
+      "recurrenceGroupId": "recurrence-worship-sabbath-saturday",
+      "recurrenceLabel": "Contoh pola mingguan setiap Sabbath/Sabtu",
+      "schedulePatternStatus": "dummy_pattern",
+      "skipIfLongWeekend": true,
+      "longWeekendCheckSource": "academic-calendar-2026",
+      "longWeekendCheckStatus": "pending_academic_calendar_2026"
+    }
+  ],
+  "users": [],
+  "bookmarks": [],
+  "mySchedule": [],
+  "dormitories": [
+    {
+      "id": "dormitory-jasmine-1",
+      "name": "JASMINE 1",
+      "isReferenceData": true,
+      "sourceNote": "Nama asrama mengikuti daftar resmi yang diberikan oleh tim."
+    },
+    {
+      "id": "dormitory-jasmine-2",
+      "name": "JASMINE 2",
+      "isReferenceData": true,
+      "sourceNote": "Nama asrama mengikuti daftar resmi yang diberikan oleh tim."
+    },
+    {
+      "id": "dormitory-guest-house",
+      "name": "GUEST HOUSE",
+      "isReferenceData": true,
+      "sourceNote": "Nama asrama mengikuti daftar resmi yang diberikan oleh tim."
+    },
+    {
+      "id": "dormitory-genzet",
+      "name": "GENZET",
+      "isReferenceData": true,
+      "sourceNote": "Nama asrama mengikuti daftar resmi yang diberikan oleh tim."
+    },
+    {
+      "id": "dormitory-annex",
+      "name": "ANNEX",
+      "isReferenceData": true,
+      "sourceNote": "Nama asrama mengikuti daftar resmi yang diberikan oleh tim."
+    },
+    {
+      "id": "dormitory-bougenvile",
+      "name": "BOUGENVILE",
+      "isReferenceData": true,
+      "sourceNote": "Nama asrama mengikuti daftar resmi yang diberikan oleh tim."
+    },
+    {
+      "id": "dormitory-crystal",
+      "name": "CRYSTAL",
+      "isReferenceData": true,
+      "sourceNote": "Nama asrama mengikuti daftar resmi yang diberikan oleh tim."
+    },
+    {
+      "id": "dormitory-edelweis",
+      "name": "EDELWEIS",
+      "isReferenceData": true,
+      "sourceNote": "Nama asrama mengikuti daftar resmi yang diberikan oleh tim."
+    }
+  ],
+  "worshipSchedules": [
+    {
+      "id": "worship-midweek",
+      "name": "IBADAH MIDWEEK",
+      "categoryId": "cat-religious",
+      "schedulePattern": {
+        "frequency": "weekly",
+        "dayOfWeek": "WEDNESDAY",
+        "dayLabel": "Rabu"
+      },
+      "targetAudience": [
+        "residents_all_dormitories",
+        "outsider_near"
+      ],
+      "targetAudienceLabel": "Seluruh penghuni asrama dan outsider dekat",
+      "applicableDormitoryIds": [
+        "dormitory-jasmine-1",
+        "dormitory-jasmine-2",
+        "dormitory-guest-house",
+        "dormitory-genzet",
+        "dormitory-annex",
+        "dormitory-bougenvile",
+        "dormitory-crystal",
+        "dormitory-edelweis"
+      ],
+      "timeStatus": "dummy_time",
+      "locationStatus": "dummy_location",
+      "isDummy": true,
+      "note": "Jadwal rutin setiap Rabu. Jam dan lokasi pada event contoh hanya simulasi."
+    },
+    {
+      "id": "worship-vesper",
+      "name": "IBADAH VESPER",
+      "categoryId": "cat-religious",
+      "schedulePattern": {
+        "frequency": "weekly",
+        "dayOfWeek": "FRIDAY",
+        "dayLabel": "Jumat"
+      },
+      "targetAudience": [
+        "residents_all_dormitories",
+        "outsider_near"
+      ],
+      "targetAudienceLabel": "Seluruh penghuni asrama dan outsider dekat",
+      "applicableDormitoryIds": [
+        "dormitory-jasmine-1",
+        "dormitory-jasmine-2",
+        "dormitory-guest-house",
+        "dormitory-genzet",
+        "dormitory-annex",
+        "dormitory-bougenvile",
+        "dormitory-crystal",
+        "dormitory-edelweis"
+      ],
+      "timeStatus": "dummy_time",
+      "locationStatus": "dummy_location",
+      "isDummy": true,
+      "note": "Jadwal rutin setiap Jumat. Jam dan lokasi pada event contoh hanya simulasi."
+    },
+    {
+      "id": "worship-sabbath",
+      "name": "IBADAH SABBATH",
+      "categoryId": "cat-religious",
+      "schedulePattern": {
+        "frequency": "weekly",
+        "dayOfWeek": "SATURDAY",
+        "dayLabel": "Sabtu / Sabbath"
+      },
+      "targetAudience": [
+        "residents_all_dormitories",
+        "outsider_near",
+        "outsider_far"
+      ],
+      "targetAudienceLabel": "Seluruh penghuni asrama, outsider dekat, dan outsider jauh",
+      "applicableDormitoryIds": [
+        "dormitory-jasmine-1",
+        "dormitory-jasmine-2",
+        "dormitory-guest-house",
+        "dormitory-genzet",
+        "dormitory-annex",
+        "dormitory-bougenvile",
+        "dormitory-crystal",
+        "dormitory-edelweis"
+      ],
+      "timeStatus": "dummy_time",
+      "locationStatus": "dummy_location",
+      "isDummy": true,
+      "skipIfLongWeekend": true,
+      "longWeekendCheckSource": "academic-calendar-2026",
+      "longWeekendCheckStatus": "pending_academic_calendar_2026",
+      "note": "Jadwal rutin setiap Sabbath/Sabtu, kecuali saat long weekend. Penentuan long weekend wajib mengacu pada Kalender Akademik UNKLAB 2026. Sampai kalender resmi tersedia, semua tanggal contoh berstatus perlu verifikasi."
+    }
+  ],
+  "audienceGroups": [
+    {
+      "id": "residents_all_dormitories",
+      "label": "Seluruh penghuni asrama"
+    },
+    {
+      "id": "outsider_near",
+      "label": "Outsider dekat"
+    },
+    {
+      "id": "outsider_far",
+      "label": "Outsider jauh"
+    },
+    {
+      "id": "students",
+      "label": "Mahasiswa"
+    }
+  ]
+}
