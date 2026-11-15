@@ -320,6 +320,15 @@ button:disabled, button[disabled] {
   }
 }
 
+/* Login owns the desktop viewport so the purple hero never leaves a white band. */
+.main-area.guest { min-height: 100vh; }
+.main-area.guest .login-page { width: 100%; flex: 1 1 auto; min-height: 0; }
+.main-area.guest .footer { display: none; }
+@media (min-width: 821px) {
+  .main-area.guest .login-page { height: calc(100dvh - 65px); min-height: calc(100dvh - 65px); }
+  .main-area.guest .login-visual, .main-area.guest .login-side { min-height: 100%; }
+}
+
 .onboarding-backdrop { padding: 24px; }
 .onboard-modal-large { width: min(100%, 720px); max-height: min(88vh, 760px); padding: 32px; overflow-y: auto; }
 .onboard-modal-large h2 { font-size: 25px; }
