@@ -4,13 +4,12 @@ import { collection, deleteDoc, doc, getDoc, getDocs, getFirestore, query, setDo
 import demoSeed from '../db.json';
 
 const config = {
-  apiKey: "AIzaSyCdAV2EfaZgrDcgFWaYIFXCS7FEFM-_7SU",
-  authDomain: "final-frontend-36388.firebaseapp.com",
-  projectId: "final-frontend-36388",
-  storageBucket: "final-frontend-36388.firebasestorage.app",
-  messagingSenderId: "238877915093",
-  appId: "1:238877915093:web:00348c7bae4bfb7e67af5c",
-  measurementId: "G-Q04K4VM4SK"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
 export const firebaseEnabled = Boolean(config.apiKey && config.authDomain && config.projectId && config.appId);

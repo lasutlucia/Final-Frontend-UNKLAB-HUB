@@ -7,7 +7,13 @@
     "timezone": "Asia/Makassar",
     "importantWarning": "Seluruh tanggal, waktu, dan lokasi event dalam file ini adalah DUMMY. Nama organisasi, choir, dan asrama adalah data referensi dari tim. Jangan perlakukan jadwal dummy sebagai jadwal resmi UNKLAB.",
     "seedDataOnly": true,
-    "academicCalendar2026": "Belum diisi. Masukkan hanya berdasarkan dokumen kalender akademik resmi yang diberikan oleh tim.",
+    "academicCalendar2026": {
+      "sourceFile": "Kalender Akademik 2026 (1).pdf",
+      "sourcePath": "C:\\Users\\Reva Rorie\\Documents\\KULIAH\\sem 5\\front end\\project\\Kalender Akademik 2026 (1).pdf",
+      "status": "imported_from_official_reference_pdf",
+      "timezone": "Asia/Makassar",
+      "note": "Tanggal akademik pada event dengan sourceType academic_calendar berasal dari dokumen referensi Kalender Akademik 2026. Event kegiatan lain tetap merupakan data simulasi."
+    },
     "updatedDate": "2026-11-10",
     "dormitoryScheduleNote": "Pola kegiatan asrama dan ibadah mengikuti informasi yang diberikan tim. Jam, tanggal, dan lokasi event seed tetap simulasi. Jadwal Sabbath wajib diperiksa terhadap kalender akademik 2026 untuk mengecualikan long weekend."
   },
@@ -1947,9 +1953,134 @@
       "skipIfLongWeekend": true,
       "longWeekendCheckSource": "academic-calendar-2026",
       "longWeekendCheckStatus": "pending_academic_calendar_2026"
+    },
+    {
+      "id": "academic-2026-11-finals",
+      "title": "Ujian Akhir Semester I 2026/2027",
+      "date": "2026-11-23",
+      "endDate": "2026-11-27",
+      "categoryId": "cat-academic-calendar",
+      "organizerName": "Universitas Klabat",
+      "description": "Periode Ujian Akhir Semester I 2026/2027 sesuai Kalender Akademik UNKLAB.",
+      "location": "Area Akademik UNKLAB",
+      "startTime": "07:30",
+      "endTime": "17:00",
+      "status": "approved",
+      "sourceType": "academic_calendar",
+      "isDummy": false,
+      "tags": ["akademik", "ujian", "final", "semester 1"]
+    },
+    {
+      "id": "academic-2026-11-finals-24",
+      "title": "Ujian Akhir Semester — Kelas Sore",
+      "date": "2026-11-24",
+      "endDate": "2026-11-27",
+      "categoryId": "cat-academic-calendar",
+      "organizerName": "Universitas Klabat",
+      "description": "Rangkaian ujian akhir kelas sore pada periode 24–27 November 2026.",
+      "location": "Area Akademik UNKLAB",
+      "startTime": "16:00",
+      "endTime": "20:00",
+      "status": "approved",
+      "sourceType": "academic_calendar",
+      "isDummy": false,
+      "tags": ["akademik", "ujian", "final", "kelas sore"]
+    },
+    {
+      "id": "academic-2026-03-midterm",
+      "title": "Ujian Tengah Semester II 2025/2026",
+      "date": "2026-03-09",
+      "categoryId": "cat-academic-calendar",
+      "organizerName": "Universitas Klabat",
+      "description": "Periode Ujian Tengah Semester II 2025/2026 sesuai Kalender Akademik UNKLAB.",
+      "location": "Area Akademik UNKLAB",
+      "startTime": "07:30",
+      "endTime": "17:00",
+      "status": "approved",
+      "sourceType": "academic_calendar",
+      "isDummy": false,
+      "tags": ["akademik", "ujian", "semester 2"]
+    },
+    {
+      "id": "academic-2026-06-summer-finals",
+      "title": "Ujian Akhir Semester Padat 2026",
+      "date": "2026-06-01",
+      "endDate": "2026-07-03",
+      "categoryId": "cat-academic-calendar",
+      "organizerName": "Universitas Klabat",
+      "description": "Periode ujian akhir semester padat 2026 yang tercantum dalam kalender akademik.",
+      "location": "Area Akademik UNKLAB",
+      "startTime": "07:30",
+      "endTime": "17:00",
+      "status": "approved",
+      "sourceType": "academic_calendar",
+      "isDummy": false,
+      "tags": ["akademik", "ujian", "semester padat"]
     }
   ],
-  "users": [],
+  "users": [
+    {
+      "id": "user-mahasiswa-demo",
+      "name": "Nadia Mahasiswa",
+      "email": "mahasiswa.demo@unklab.ac.id",
+      "password": "Mahasiswa123!",
+      "role": "mahasiswa",
+      "faculty": "Fakultas Ilmu Komputer",
+      "interests": [
+        "Musik"
+      ],
+      "hobbies": [
+        "menyanyi"
+      ],
+      "activityTypes": [
+        "choir",
+        "ibadah"
+      ],
+      "freeTime": [
+        "sore",
+        "akhir pekan"
+      ],
+      "profileCompleted": true
+    },
+    {
+      "id": "user-dosen-demo",
+      "name": "Dr. Dosen Demo",
+      "email": "dosen.demo@unklab.ac.id",
+      "password": "Dosen123!",
+      "role": "dosen",
+      "faculty": "Fakultas Keguruan",
+      "interests": [
+        "Akademik"
+      ],
+      "hobbies": [],
+      "profileCompleted": true
+    },
+    {
+      "id": "user-organisasi-demo",
+      "name": "BEM UNKLAB",
+      "email": "organisasi.demo@unklab.ac.id",
+      "password": "Organisasi123!",
+      "role": "organisasi",
+      "organizationName": "BEM UNKLAB",
+      "interests": [
+        "Kepemimpinan",
+        "Sosial"
+      ],
+      "hobbies": [],
+      "profileCompleted": true
+    },
+    {
+      "id": "user-admin-demo",
+      "name": "Admin UNKLAB",
+      "email": "admin.demo@unklab.ac.id",
+      "password": "Admin123!",
+      "role": "admin",
+      "faculty": "Administrasi UNKLAB",
+      "interests": [],
+      "hobbies": [],
+      "profileCompleted": true
+    }
+  ],
   "bookmarks": [],
   "mySchedule": [],
   "dormitories": [
@@ -2093,6 +2224,71 @@
       "longWeekendCheckSource": "academic-calendar-2026",
       "longWeekendCheckStatus": "pending_academic_calendar_2026",
       "note": "Jadwal rutin setiap Sabbath/Sabtu, kecuali saat long weekend. Penentuan long weekend wajib mengacu pada Kalender Akademik UNKLAB 2026. Sampai kalender resmi tersedia, semua tanggal contoh berstatus perlu verifikasi."
+    }
+  ],
+  "academicEventsFromPdf": [
+    {
+      "id": "academic-2026-11-finals",
+      "title": "Ujian Akhir Semester I 2026/2027",
+      "date": "2026-11-23",
+      "endDate": "2026-11-27",
+      "categoryId": "cat-academic-calendar",
+      "organizerName": "Universitas Klabat",
+      "description": "Periode Ujian Akhir Semester I 2026/2027 sesuai Kalender Akademik UNKLAB.",
+      "location": "Area Akademik UNKLAB",
+      "startTime": "07:30",
+      "endTime": "17:00",
+      "status": "approved",
+      "sourceType": "academic_calendar",
+      "isDummy": false,
+      "tags": ["akademik", "ujian", "final", "semester 1"]
+    },
+    {
+      "id": "academic-2026-11-finals-24",
+      "title": "Ujian Akhir Semester — Kelas Sore",
+      "date": "2026-11-24",
+      "endDate": "2026-11-27",
+      "categoryId": "cat-academic-calendar",
+      "organizerName": "Universitas Klabat",
+      "description": "Rangkaian ujian akhir kelas sore pada periode 24–27 November 2026.",
+      "location": "Area Akademik UNKLAB",
+      "startTime": "16:00",
+      "endTime": "20:00",
+      "status": "approved",
+      "sourceType": "academic_calendar",
+      "isDummy": false,
+      "tags": ["akademik", "ujian", "final", "kelas sore"]
+    },
+    {
+      "id": "academic-2026-03-midterm",
+      "title": "Ujian Tengah Semester II 2025/2026",
+      "date": "2026-03-09",
+      "categoryId": "cat-academic-calendar",
+      "organizerName": "Universitas Klabat",
+      "description": "Periode Ujian Tengah Semester II 2025/2026 sesuai Kalender Akademik UNKLAB.",
+      "location": "Area Akademik UNKLAB",
+      "startTime": "07:30",
+      "endTime": "17:00",
+      "status": "approved",
+      "sourceType": "academic_calendar",
+      "isDummy": false,
+      "tags": ["akademik", "ujian", "semester 2"]
+    },
+    {
+      "id": "academic-2026-06-summer-finals",
+      "title": "Ujian Akhir Semester Padat 2026",
+      "date": "2026-06-01",
+      "endDate": "2026-07-03",
+      "categoryId": "cat-academic-calendar",
+      "organizerName": "Universitas Klabat",
+      "description": "Periode ujian akhir semester padat 2026 yang tercantum dalam kalender akademik.",
+      "location": "Area Akademik UNKLAB",
+      "startTime": "07:30",
+      "endTime": "17:00",
+      "status": "approved",
+      "sourceType": "academic_calendar",
+      "isDummy": false,
+      "tags": ["akademik", "ujian", "semester padat"]
     }
   ],
   "audienceGroups": [
