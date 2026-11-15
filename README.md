@@ -33,8 +33,8 @@ Aplikasi memakai JSON Server lokal sebagai mode demo default. Firebase Authentic
 1. Buat proyek di Firebase Console, aktifkan **Authentication → Email/Password** dan buat database **Cloud Firestore**.
 2. Salin `.env.example` menjadi `.env`, lalu isi nilainya dari **Project settings → Your apps → Web app**. Restart Vite setelah mengubah `.env`.
 3. Deploy aturan keamanan dari root proyek dengan Firebase CLI: `firebase deploy --only firestore:rules` (login dan pilih proyek Firebase terlebih dahulu).
-4. Buat akun melalui Firebase Authentication. Untuk setiap akun, buat dokumen `users/{UID}` di Firestore dengan minimal `name`, `email`, `role`, dan `profileCompleted`. Nilai `role` harus `mahasiswa`, `dosen`, `organisasi`, atau `admin`.
-5. Buat dokumen koleksi `categories` dan `events` untuk data awal. Pakai ID dokumen sama dengan nilai `id` yang dipakai aplikasi. Event publik harus berstatus `approved`; pengajuan organisasi dimulai dengan `pending`.
+4. Buat akun melalui Firebase Authentication. Untuk setiap akun, buat dokumen `users/{UID}` di Firestore dengan minimal `name`, `email`, `role`, dan `profileCompleted`. Nilai `role` harus `mahasiswa`, `dosen`, atau `admin`.
+5. Buat dokumen koleksi `categories` dan `events` untuk data awal. Pakai ID dokumen sama dengan nilai `id` yang dipakai aplikasi. Event publik harus berstatus `approved`; pengajuan Mahasiswa dimulai dengan `pending`.
 
 Profil awal (termasuk admin pertama) perlu dibuat dari Firebase Console atau Admin SDK tepercaya; jangan menaruh kredensial Admin SDK di aplikasi browser. Aturan Firestore membatasi profil, bookmark, jadwal, dan pengajuan berdasarkan UID pengguna.
 
@@ -48,10 +48,9 @@ Semua akun memakai domain `@unklab.ac.id`; role dibaca dari record akun, bukan d
 |---|---|---|
 | Mahasiswa | `mahasiswa.demo@unklab.ac.id` | `Mahasiswa123!` |
 | Dosen / Staff | `dosen.demo@unklab.ac.id` | `Dosen123!` |
-| Organisasi | `organisasi.demo@unklab.ac.id` | `Organisasi123!` |
 | Admin | `admin.demo@unklab.ac.id` | `Admin123!` |
 
-Mahasiswa dan Organisasi dapat membuat pengajuan event. Dosen/Staff hanya melihat halaman Event Request. Admin melihat antrean pending dan dapat menyetujui/menolak. Event baru tetap `pending` dan baru masuk kalender publik setelah `approved`.
+Mahasiswa dapat membuat pengajuan event. Dosen/Staff hanya melihat halaman Event Request. Admin melihat antrean pending dan dapat menyetujui/menolak. Event baru tetap `pending` dan baru masuk kalender publik setelah `approved`.
 
 ## Campus AI / Gemini
 

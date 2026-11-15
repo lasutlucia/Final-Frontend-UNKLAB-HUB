@@ -2040,7 +2040,7 @@
         "sore",
         "akhir pekan"
       ],
-      "profileCompleted": true
+      "profileCompleted": false
     },
     {
       "id": "user-dosen-demo",
@@ -2053,21 +2053,7 @@
         "Akademik"
       ],
       "hobbies": [],
-      "profileCompleted": true
-    },
-    {
-      "id": "user-organisasi-demo",
-      "name": "BEM UNKLAB",
-      "email": "organisasi.demo@unklab.ac.id",
-      "password": "Organisasi123!",
-      "role": "organisasi",
-      "organizationName": "BEM UNKLAB",
-      "interests": [
-        "Kepemimpinan",
-        "Sosial"
-      ],
-      "hobbies": [],
-      "profileCompleted": true
+      "profileCompleted": false
     },
     {
       "id": "user-admin-demo",
