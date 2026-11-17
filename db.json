@@ -2062,19 +2062,20 @@
       "role": "mahasiswa",
       "faculty": "Fakultas Ilmu Komputer",
       "interests": [
-        "Olahraga",
-        "Seni"
+        "Teknologi"
       ],
-      "hobbies": [],
+      "hobbies": [
+        "Membaca"
+      ],
       "activityTypes": [
         "choir",
         "ibadah",
-        "Seminar"
+        "Olahraga"
       ],
       "freeTime": [
         "sore",
         "akhir pekan",
-        "Pagi"
+        "Akhir pekan"
       ],
       "profileCompleted": true
     },

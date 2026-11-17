@@ -1001,3 +1001,7 @@ button, input, select, textarea { font-size: 14px; }
   border: 1px solid #fad2d2;
 }
 
+.recommendation-interest-group + .recommendation-interest-group {
+  margin-top: 24px;
+}
+
