@@ -898,3 +898,106 @@ button, input, select, textarea { font-size: 14px; }
   .calendar-cell { min-height: 86px; padding: 6px; }
   .calendar-event-pill { font-size: 9px; }
 }
+
+/* Email Notification Card in Event Modal */
+.email-notify-card {
+  margin-top: 16px;
+  padding: 14px 16px;
+  background: #fbf9fc;
+  border: 1px solid #ede3f2;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.email-notify-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.email-notify-title {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 700;
+  font-size: 13.5px;
+  color: var(--purple);
+}
+.email-badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 12px;
+  background: #ede4f3;
+  color: var(--purple);
+  letter-spacing: 0.3px;
+}
+.email-notify-desc {
+  font-size: 11.5px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.4;
+}
+.email-notify-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 2px;
+}
+.email-notify-input {
+  flex: 1;
+  height: 36px;
+  padding: 0 11px;
+  border: 1px solid #ddd3e3;
+  border-radius: 7px;
+  font-size: 12.5px;
+  background: #fff;
+  color: #29242e;
+}
+.email-notify-input:focus {
+  border-color: var(--purple);
+  outline: none;
+}
+.btn-send-email {
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 7px;
+  background: var(--purple);
+  color: #fff;
+  border: none;
+  font-size: 12px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.16s ease;
+  white-space: nowrap;
+}
+.btn-send-email:hover:not(:disabled) {
+  background: var(--purple2);
+}
+.btn-send-email:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.email-notify-alert {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  padding: 7px 10px;
+  border-radius: 6px;
+  margin-top: 2px;
+  line-height: 1.35;
+}
+.email-notify-alert.success {
+  background: #eaf6ee;
+  color: #216a3c;
+  border: 1px solid #c8e8d2;
+}
+.email-notify-alert.error {
+  background: #fdf0f0;
+  color: #b72b2b;
+  border: 1px solid #fad2d2;
+}
+

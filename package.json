@@ -17,6 +17,7 @@
     "firebase": "^13.2.0",
     "json-server": "^0.17.4",
     "lucide-react": "latest",
+    "nodemailer": "^10.6.0",
     "react": "latest",
     "react-dom": "latest",
     "vite": "latest"

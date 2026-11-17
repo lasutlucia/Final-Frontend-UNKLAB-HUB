@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { Activity, ArrowDownRight, ArrowLeft, ArrowRight, Bell, Bookmark, CalendarDays, Check, ChevronDown, ChevronLeft, ChevronRight, Clock3, Compass, GraduationCap, LayoutDashboard, ListFilter, LogOut, MapPin, Menu, MessageCircle, PanelLeftClose, PanelLeftOpen, Plus, Search, Send, Settings2, ShieldCheck, Sparkles, Users, X, Zap, Eye, EyeOff } from 'lucide-react';
+import { Activity, ArrowDownRight, ArrowLeft, ArrowRight, Bell, Bookmark, CalendarDays, Check, ChevronDown, ChevronLeft, ChevronRight, Clock3, Compass, GraduationCap, LayoutDashboard, ListFilter, LogOut, Mail, MapPin, Menu, MessageCircle, PanelLeftClose, PanelLeftOpen, Plus, Search, Send, Settings2, ShieldCheck, Sparkles, Users, X, Zap, Eye, EyeOff } from 'lucide-react';
 import './styles.css';
 import { firebaseEnabled, loginWithFirebase, logoutFromFirebase, readCollection, writeRecord } from './firebase.js';
 import { askCampusAI } from './ai.js';
@@ -144,7 +144,7 @@ function App(){
       {!user&&page==='login'?<LoginPage login={login} setLogin={setLogin} onSubmit={submitLogin} error={loginError} loginBusy={loginBusy} firebaseMode={firebaseEnabled} onExplore={()=>go('explore')} onCalendar={()=>go('calendar')}/>:!user&&page==='home'?<Landing upcoming={upcoming} loading={dataLoading} onLogin={()=>setShowLogin(true)} onExplore={()=>go('explore')} onCalendar={()=>go('calendar')} onSelect={setSelected}/>:<div className="page-wrap">{page==='home'&&<Dashboard user={user} events={upcoming} bookmarks={bookmarks} categories={categories} loading={dataLoading} onSelect={setSelected} onGo={go} onLogin={()=>setShowLogin(true)}/>} {page==='calendar'&&<CalendarPage events={approved} categories={categories} month={month} setMonth={setMonth} view={view} setView={setView} selectedDate={null} onSelect={setSelected}/>} {page==='explore'&&<ExplorePage events={filtered} allEvents={approved} categories={categories} query={query} setQuery={setQuery} category={category} setCategory={setCategory} loading={dataLoading} onSelect={setSelected}/>} {page==='assistant'&&<Assistant user={user} chat={chat} input={chatInput} setInput={setChatInput} send={answerAI} aiBusy={aiBusy} aiError={aiError} onSelect={setSelected}/>} {page==='schedule'&&<SchedulePage schedule={schedule.filter(s=>s.userId===user?.id)} events={events} loading={dataLoading} onSelect={setSelected} onGo={go}/>} {page==='requests'&&<RequestsPage user={user} events={events} loading={dataLoading} onNew={()=>setShowForm(true)} onReview={review}/>} {page==='profile'&&<Profile user={user} onLogout={logout} onSave={u=>{setUser(u);localStorage.setItem('unklab-user',JSON.stringify(u));persist('users','PATCH',u);setToast('Profil berhasil diperbarui')}}/>}</div>}
       <footer className="footer"><span>© 2026 UNKLAB HUB</span><span>Informasi kegiatan kampus, dalam satu tempat.</span><span>WITA · Asia/Makassar</span></footer>
     </main>
-    {selected&&<EventModal event={selected} category={categories.find(c=>c.id===selected.categoryId)?.name} onClose={()=>setSelected(null)} saved={bookmarks.some(b=>b.eventId===selected.id&&b.userId===user?.id)} scheduled={schedule.some(s=>s.eventId===selected.id&&s.userId===user?.id)} onSave={()=>toggleBookmark(selected)} onSchedule={()=>toggleSchedule(selected)} logged={!!user}/>}
+    {selected&&<EventModal event={selected} category={categories.find(c=>c.id===selected.categoryId)?.name} onClose={()=>setSelected(null)} saved={bookmarks.some(b=>b.eventId===selected.id&&b.userId===user?.id)} scheduled={schedule.some(s=>s.eventId===selected.id&&s.userId===user?.id)} onSave={()=>toggleBookmark(selected)} onSchedule={()=>toggleSchedule(selected)} logged={!!user} user={user}/>}
     {showLogin&&<div className="modal-backdrop" onMouseDown={e=>e.target===e.currentTarget&&setShowLogin(false)}><div className="login-modal"><button className="modal-close" onClick={()=>setShowLogin(false)}><X size={18}/></button><div className="login-logo"><GraduationCap size={21}/></div><p className="eyebrow">SELAMAT DATANG</p><h2>Masuk ke UNKLAB HUB</h2><p className="subtle">Gunakan akun yang sudah terdaftar untuk melihat agenda personalmu.</p><form onSubmit={submitLogin}><label>{firebaseEnabled?'Email':'Email kampus'}<input type="email" value={login.email} onChange={e=>setLogin({...login,email:e.target.value})} placeholder={firebaseEnabled?'email@contoh.com':'nama@unklab.ac.id'} required/></label><label>Password<div className="password-field"><input type={showLoginPassword?'text':'password'} value={login.password} onChange={e=>setLogin({...login,password:e.target.value})} placeholder="Masukkan password" required/><button type="button" className="password-toggle" onClick={()=>setShowLoginPassword(value=>!value)} aria-label={showLoginPassword?'Sembunyikan password':'Tampilkan password'}>{showLoginPassword?<EyeOff size={16}/>:<Eye size={16}/>}</button></div></label>{loginError&&<div className="error-box">{loginError}</div>}<button className="btn-primary full" disabled={loginBusy}>{loginBusy?"Menghubungkan ke Firebase…":"Masuk ke workspace"} <ArrowRight size={16}/></button></form><div className="demo-note"><Sparkles size={14}/><span>{firebaseEnabled?'Gunakan email yang terdaftar di Firebase Authentication. Role akun mengikuti profil Firebase.':'Role akun demo dibaca dari database; email harus berakhiran @unklab.ac.id.'}</span></div></div></div>}
     {showOnboarding&&<div className="modal-backdrop onboarding-backdrop"><div className="onboard-modal onboard-modal-large"><span className="onboard-step">01 <i>/</i> 01</span><div className="login-logo"><Sparkles size={20}/></div><p className="eyebrow">SEBELUM MASUK KE DASHBOARD</p><h2>Kenalan dulu dengan kami.</h2><p className="subtle">Isi nama dan preferensimu agar rekomendasi kegiatan di dashboard lebih personal. Kamu bisa mengubahnya lagi melalui Profil.</p><label className="onboard-name-label">Nama lengkap<input autoFocus value={onboardName} onChange={e=>setOnboardName(e.target.value)} placeholder="Contoh: Reva Rorie" required/></label><div className="onboard-section"><b>Minat kegiatan</b><small>Pilih satu atau beberapa.</small><div className="onboard-options">{['Teknologi','Bisnis','Akademik','Seni','Musik','Olahraga','Sosial','Kerohanian','Kepemimpinan','Lingkungan'].map(x=><button type="button" key={x} className={onboardInterests.includes(x)?'selected':''} onClick={()=>setOnboardInterests(onboardInterests.includes(x)?onboardInterests.filter(i=>i!==x):[...onboardInterests,x])}>{onboardInterests.includes(x)&&<Check size={12}/>} {x}</button>)}</div></div><div className="onboard-section"><b>Jenis kegiatan yang disukai</b><small>Ini membantu mencocokkan kategori event.</small><div className="onboard-options">{['Seminar','Organisasi','Kerohanian','Choir','Olahraga','Akademik','Sosial'].map(x=><button type="button" key={x} className={onboardActivityTypes.includes(x)?'selected':''} onClick={()=>setOnboardActivityTypes(onboardActivityTypes.includes(x)?onboardActivityTypes.filter(i=>i!==x):[...onboardActivityTypes,x])}>{onboardActivityTypes.includes(x)&&<Check size={12}/>} {x}</button>)}</div></div><div className="onboard-section"><b>Waktu luang</b><small>Pilih waktu yang biasanya nyaman untuk ikut kegiatan.</small><div className="onboard-options">{['Pagi','Siang','Sore','Malam','Akhir pekan'].map(x=><button type="button" key={x} className={onboardFreeTime.includes(x)?'selected':''} onClick={()=>setOnboardFreeTime(onboardFreeTime.includes(x)?onboardFreeTime.filter(i=>i!==x):[...onboardFreeTime,x])}>{onboardFreeTime.includes(x)&&<Check size={12}/>} {x}</button>)}</div></div><label className="hobby-label">Hobi <span>(opsional, pisahkan dengan koma)</span><input value={onboardHobby} onChange={e=>setOnboardHobby(e.target.value)} placeholder="Contoh: menyanyi, membaca, coding"/></label><div className="onboard-actions"><button type="button" className="text-link" onClick={()=>finishOnboarding(true)}>Lewati untuk sekarang</button><button type="button" className="btn-primary" onClick={()=>finishOnboarding(false)}>Simpan & masuk ke dashboard <ArrowRight size={15}/></button></div></div></div>}
     {showForm&&<div className="modal-backdrop"><div className="form-modal"><button className="modal-close" onClick={()=>setShowForm(false)}><X size={18}/></button><p className="eyebrow">PENGAJUAN KEGIATAN</p><h2>Ajukan event baru</h2><p className="subtle">Event akan ditampilkan setelah diperiksa oleh Admin.</p><form onSubmit={submitEvent} className="event-form"><label>Nama kegiatan<input required value={form.title} onChange={e=>setForm({...form,title:e.target.value})} placeholder="Contoh: Seminar teknologi"/></label><label>Kategori<select value={form.categoryId} onChange={e=>setForm({...form,categoryId:e.target.value})}>{categories.filter(c=>c.slug!=='academic-calendar').map(c=><option key={c.id} value={c.id}>{c.name}</option>)}</select></label><label className="span-two">Deskripsi<textarea required value={form.description} onChange={e=>setForm({...form,description:e.target.value})} rows="3" placeholder="Ceritakan singkat tentang kegiatan"/></label><label>Tanggal<input type="date" required value={form.date} onChange={e=>setForm({...form,date:e.target.value})}/></label><div className="time-pair"><label>Mulai<input type="time" required value={form.startTime} onChange={e=>setForm({...form,startTime:e.target.value})}/></label><label>Selesai<input type="time" required value={form.endTime} onChange={e=>setForm({...form,endTime:e.target.value})}/></label></div><label>Lokasi<input required value={form.location} onChange={e=>setForm({...form,location:e.target.value})} placeholder="Lokasi kegiatan"/></label><label>Target peserta<select value={form.targetAudience} onChange={e=>setForm({...form,targetAudience:e.target.value})}><option value="mahasiswa">Mahasiswa</option><option value="umum">Umum</option><option value="residents_all_dormitories">Penghuni asrama</option></select></label><div className="span-two review-note">Sebelum mengirim, pastikan tanggal, jam, lokasi, dan deskripsi sudah benar. Status awal pengajuan: <b>Menunggu review</b>.</div><button className="btn-primary span-two">Kirim pengajuan <ArrowRight size={16}/></button></form></div></div>}
@@ -233,7 +233,146 @@ function Assistant({chat,input,setInput,send,aiBusy,aiError,onSelect,user}){cons
 function SchedulePage({schedule,events,loading,onSelect,onGo}){const own=schedule.map(s=>events.find(e=>e.id===s.eventId)).filter(Boolean).sort((a,b)=>a.date.localeCompare(b.date));const conflicts=own.filter((e,i)=>own.some((o,j)=>i!==j&&e.date===o.date&&e.startTime<o.endTime&&o.startTime<e.endTime));return <><PageHeading eyebrow="WAKTUMU, CARA KAMU" title="Jadwal saya">Kegiatan yang kamu simpan di agenda pribadi.</PageHeading>{loading?<div className="agenda-list">{[0,1,2,3].map(i=><SkeletonEventRow key={i}/>)}</div>:own.length?<><div className="schedule-summary"><span className="stat-icon purple"><CalendarDays size={18}/></span><div><b>{own.length} agenda</b><small>{conflicts.length?`${conflicts.length} jadwal perlu diperiksa`:'Tidak ada bentrok jadwal'}</small></div>{conflicts.length>0&&<span className="conflict-badge">Periksa bentrok</span>}</div><div className="agenda-list">{own.map(e=><EventRow key={e.id} event={e} onClick={()=>onSelect(e)}/>)}</div></>:<Empty icon="⌁" title="Jadwalmu masih kosong" text="Tambahkan kegiatan ke jadwal pribadimu dari halaman Jelajahi." action="Jelajahi kegiatan" onClick={()=>onGo('explore')}/>}</>}
 function RequestsPage({user,events,loading,onNew,onReview}){const [rejecting,setRejecting]=useState(null);const own=user.role==='mahasiswa'?events.filter(e=>e.organizerId===user.id):events;const list=user.role==='admin'?own.filter(e=>e.status==='pending'):own;if(user.role==='dosen')return <><PageHeading eyebrow="PANDUAN PENGAJUAN" title="Event Request">Informasi pengajuan kegiatan untuk sivitas akademika.</PageHeading><div className="readonly-panel"><div className="readonly-icon"><ShieldCheck size={22}/></div><h2>Pengajuan event oleh Mahasiswa</h2><p>Akun Dosen / Staff dapat melihat informasi pengajuan. Pengiriman dan perubahan pengajuan tersedia untuk akun Mahasiswa.</p><div className="readonly-steps"><span>01 <b>Siapkan detail kegiatan</b></span><span>02 <b>Ajukan kegiatan dari akun Mahasiswa</b></span><span>03 <b>Tunggu pemeriksaan Admin</b></span></div></div></>;return <><PageHeading eyebrow={user.role==='admin'?'PENGELOLAAN KEGIATAN':'PENGAJUAN KEGIATAN'} title={user.role==='admin'?'Approval queue':'Event Request'} action={user.role==='mahasiswa'?<button className="btn-primary" onClick={onNew}><Plus size={16}/> Ajukan kegiatan</button>:null}>{user.role==='admin'?'Tinjau dan validasi pengajuan kegiatan dari Mahasiswa.':'Pantau pengajuan event dan status pemeriksaannya.'}</PageHeading>{user.role==='mahasiswa'&&<div className="request-info"><ShieldCheck size={17}/><span>Pengajuan baru berstatus <b>Menunggu review</b> dan hanya tampil ke publik setelah disetujui Admin.</span></div>}{loading?<div style={{display:'flex',flexDirection:'column',gap:9}}>{[0,1,2].map(i=><SkeletonRequestCard key={i}/>)}</div>:list.length?list.map(e=><div className="request-card" key={e.id}><div className="request-date"><b>{new Date(`${e.date}T12:00:00`).getDate()}</b><span>{new Intl.DateTimeFormat('id-ID',{month:'short'}).format(new Date(`${e.date}T12:00:00`))}</span></div><div className="request-copy"><span className={`status-pill ${e.status}`}>{e.status==='pending'?'MENUNGGU REVIEW':e.status==='approved'?'DISETUJUI':'DITOLAK'}</span><h3>{e.title}</h3><p>{e.organizerName} · {dateLabel(e.date,{weekday:'short',day:'numeric',month:'long',year:'numeric'})} · {fmtTime(e)}</p>{e.reviewNote&&<small>{e.reviewNote}</small>}</div>{user.role==='admin'&&<div className="review-actions"><button className="approve-btn" onClick={()=>onReview(e,'approved')}><Check size={15}/> Setujui</button><button className="reject-btn" onClick={()=>setRejecting(e)}><X size={15}/> Tolak</button></div>}</div>):<Empty icon="✓" title={user.role==='admin'?'Semua pengajuan sudah ditinjau':'Belum ada pengajuan kegiatan'} text={user.role==='admin'?'Pengajuan baru akan muncul di antrean ini.':'Pengajuan yang kamu kirim akan tampil di sini.'} action={user.role==='mahasiswa'?'Ajukan event':null} onClick={onNew}/ >}{rejecting&&<div className="modal-backdrop"><form className="reject-modal" onSubmit={e=>{e.preventDefault();const reason=e.currentTarget.reason.value;onReview({...rejecting,reviewNote:reason},'rejected');setRejecting(null)}}><button type="button" className="modal-close" onClick={()=>setRejecting(null)}><X size={18}/></button><h2>Tolak pengajuan</h2><p className="subtle">Berikan alasan singkat agar pemohon dapat memahami keputusan ini.</p><textarea name="reason" required placeholder="Alasan penolakan" rows="4"/><button className="btn-primary full">Kirim keputusan</button></form></div>}</>}
 function Profile({user,onLogout,onSave}){const [editing,setEditing]=useState(false),[name,setName]=useState(user?.name||''),[interests,setInterests]=useState(user?.interests||[]),[hobbies,setHobbies]=useState((user?.hobbies||[]).join(', '));useEffect(()=>{setName(user?.name||'');setInterests(user?.interests||[]);setHobbies((user?.hobbies||[]).join(', '))},[user?.name,user?.interests,user?.hobbies]);const options=['Teknologi','Bisnis','Akademik','Seni','Musik','Olahraga','Sosial','Kerohanian','Kepemimpinan','Lingkungan'];function handleSave(){const cleanName=name.trim();if(!cleanName)return;const cleanHobbies=hobbies.split(',').map(s=>s.trim()).filter(Boolean);onSave({...user,name:cleanName,interests,hobbies:cleanHobbies});setEditing(false)}function handleCancel(){setName(user?.name||'');setInterests(user?.interests||[]);setHobbies((user?.hobbies||[]).join(', '));setEditing(false)}return <><PageHeading eyebrow="AKUN KAMPUSMU" title="Profil">Atur informasi dan preferensi kegiatanmu.</PageHeading><div className="profile-layout"><section className="profile-card"><div className="profile-cover"><div className="profile-big-avatar">{user.name?.[0]?.toUpperCase()}</div></div><div className="profile-info"><div className="profile-name-row">{editing?<div className="profile-edit-name-box"><label className="profile-edit-label">Nama Lengkap</label><input type="text" className="profile-name-input" value={name} onChange={e=>setName(e.target.value)} placeholder="Masukkan nama lengkap" autoFocus/><span className="role-pill">{roleNames[user.role]}</span></div>:<div><h2>{user.name}</h2><span className="role-pill">{roleNames[user.role]}</span></div>}<div className="profile-actions-group">{editing&&<button type="button" className="btn-secondary" onClick={handleCancel}>Batal</button>}<button type="button" className="btn-primary" onClick={editing?handleSave:()=>setEditing(true)} disabled={editing&&!name.trim()}>{editing?'Simpan perubahan':'Edit profil'}</button></div></div><div className="profile-detail"><span>Email kampus</span><b>{user.email}</b></div><div className="profile-detail"><span>Fakultas / unit</span><b>{user.faculty||user.organizationName||'Belum ditambahkan'}</b></div><div className="profile-preferences"><div><h3>Minat kegiatan</h3><p>Pilihanmu membantu kami menyusun agenda yang relevan.</p></div>{editing?<div className="interest-options">{options.map(o=><button type="button" key={o} className={interests.includes(o)?'selected':''} onClick={()=>setInterests(interests.includes(o)?interests.filter(x=>x!==o):[...interests,o])}>{interests.includes(o)&&<Check size={12}/>} {o}</button>)}</div>:<div className="interest-tags">{(interests.length?interests:['Belum ada minat dipilih']).map(x=><span key={x}>{x}</span>)}</div>}</div><div className="profile-detail profile-hobby-detail"><span>Hobi</span>{editing?<input type="text" className="profile-hobby-input" value={hobbies} onChange={e=>setHobbies(e.target.value)} placeholder="Contoh: menyanyi, membaca, coding"/>:<b>{user.hobbies?.length?user.hobbies.join(', '):'Belum ditambahkan'}</b>}</div><button className="logout-button" onClick={onLogout}><LogOut size={16}/> Keluar dari akun</button></div></section><aside className="profile-side"><div className="notice-card"><div><span className="notice-dot"/><b>Preferensi personal</b></div><p>Informasi minat hanya digunakan untuk menampilkan rekomendasi kegiatan yang lebih relevan.</p></div><div className="profile-safety"><ShieldCheck size={18}/><b>Akun UNKLAB</b><p>Prototipe autentikasi email kampus untuk kebutuhan demonstrasi.</p></div></aside></div></>}
-function EventModal({event,category,onClose,saved,scheduled,onSave,onSchedule,logged}){return <div className="modal-backdrop" onMouseDown={e=>e.target===e.currentTarget&&onClose()}><div className="event-modal"><button className="modal-close" onClick={onClose}><X size={18}/></button><div className={`modal-art ${palettes[Math.abs(event.title.length)%palettes.length]}`}><span>{iconFor(event.title)}</span><div className="art-label"><i/> {event.isDummy?'DATA SIMULASI':'EVENT UNKLAB HUB'}</div></div><div className="event-modal-content"><span className="category-tag">{category||'Kegiatan Kampus'}</span><h2>{event.title}</h2><p className="event-organizer modal-organizer"><span className="organizer-mark">{(event.organizerName||'U')[0]}</span>{event.organizerName||'UNKLAB'}</p><div className="detail-grid"><div><CalendarDays size={16}/><span><b>{dateLabel(event.date,{weekday:'long',day:'numeric',month:'long',year:'numeric'})}</b><small>{fmtTime(event)} WITA</small></span></div><div><MapPin size={16}/><span><b>{event.location||'Lokasi belum ditentukan'}</b><small>Lokasi kegiatan</small></span></div><div><Users size={16}/><span><b>{(Array.isArray(event.targetAudience)?event.targetAudience:[event.targetAudience||'mahasiswa']).join(', ')}</b><small>Target peserta</small></span></div><div><Activity size={16}/><span><b>{event.status==='approved'?'Disetujui':'Menunggu pemeriksaan'}</b><small>Status kegiatan</small></span></div></div><div className="detail-description"><h3>Tentang kegiatan</h3><p>{event.description||'Belum ada deskripsi untuk kegiatan ini.'}</p></div><div className="modal-actions"><button className={`btn-secondary ${saved?'is-saved':''}`} onClick={onSave}><Bookmark size={16} fill={saved?'currentColor':'none'}/>{saved?'Tersimpan':'Simpan event'}</button><button className="btn-primary" onClick={onSchedule}><CalendarDays size={16}/>{scheduled?'Di jadwal saya':'Tambah ke jadwal'}</button></div>{event.isDummy&&<div className="simulation-note"><span className="sim-dot"/> Jadwal, waktu, dan lokasi ini adalah data simulasi.</div>}</div></div></div>}
+function EventModal({event,category,onClose,saved,scheduled,onSave,onSchedule,logged,user}){
+  const [emailInput, setEmailInput] = useState(() => {
+    return localStorage.getItem('user_notification_email') || (user?.email?.includes('@') ? user.email : '');
+  });
+  const [sendingEmail, setSendingEmail] = useState(false);
+  const [emailFeedback, setEmailFeedback] = useState(null);
+
+  async function handleSendEmailNotification(e) {
+    if (e) e.preventDefault();
+    const target = emailInput.trim();
+    if (!target || !target.includes('@')) {
+      setEmailFeedback({ type: 'error', text: 'Masukkan alamat email penerima yang valid.' });
+      return;
+    }
+    setSendingEmail(true);
+    setEmailFeedback(null);
+    try {
+      const AI_URL = import.meta.env.VITE_AI_API_URL || 'http://localhost:3002';
+      const res = await fetch(`${AI_URL}/api/email/notify-event`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          targetEmail: target,
+          recipientName: user?.name || 'Mahasiswa UNKLAB',
+          event: event,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.error || 'Gagal mengirim email notifikasi.');
+      }
+      localStorage.setItem('user_notification_email', target);
+      setEmailFeedback({ type: 'success', text: `Email pengingat berhasil dikirim ke ${target}!` });
+    } catch (err) {
+      setEmailFeedback({ type: 'error', text: err.message || 'Gagal mengirim notifikasi email.' });
+    } finally {
+      setSendingEmail(false);
+    }
+  }
+
+  return (
+    <div className="modal-backdrop" onMouseDown={e=>e.target===e.currentTarget&&onClose()}>
+      <div className="event-modal">
+        <button className="modal-close" onClick={onClose}><X size={18}/></button>
+        <div className={`modal-art ${palettes[Math.abs(event.title.length)%palettes.length]}`}>
+          <span>{iconFor(event.title)}</span>
+          <div className="art-label"><i/> {event.isDummy?'DATA SIMULASI':'EVENT UNKLAB HUB'}</div>
+        </div>
+        <div className="event-modal-content">
+          <span className="category-tag">{category||'Kegiatan Kampus'}</span>
+          <h2>{event.title}</h2>
+          <p className="event-organizer modal-organizer">
+            <span className="organizer-mark">{(event.organizerName||'U')[0]}</span>{event.organizerName||'UNKLAB'}
+          </p>
+          <div className="detail-grid">
+            <div>
+              <CalendarDays size={16}/>
+              <span>
+                <b>{dateLabel(event.date,{weekday:'long',day:'numeric',month:'long',year:'numeric'})}</b>
+                <small>{fmtTime(event)} WITA</small>
+              </span>
+            </div>
+            <div>
+              <MapPin size={16}/>
+              <span>
+                <b>{event.location||'Lokasi belum ditentukan'}</b>
+                <small>Lokasi kegiatan</small>
+              </span>
+            </div>
+            <div>
+              <Users size={16}/>
+              <span>
+                <b>{(Array.isArray(event.targetAudience)?event.targetAudience:[event.targetAudience||'mahasiswa']).join(', ')}</b>
+                <small>Target peserta</small>
+              </span>
+            </div>
+            <div>
+              <Activity size={16}/>
+              <span>
+                <b>{event.status==='approved'?'Disetujui':'Menunggu pemeriksaan'}</b>
+                <small>Status kegiatan</small>
+              </span>
+            </div>
+          </div>
+          <div className="detail-description">
+            <h3>Tentang kegiatan</h3>
+            <p>{event.description||'Belum ada deskripsi untuk kegiatan ini.'}</p>
+          </div>
+          <div className="modal-actions">
+            <button className={`btn-secondary ${saved?'is-saved':''}`} onClick={onSave}>
+              <Bookmark size={16} fill={saved?'currentColor':'none'}/>{saved?'Tersimpan':'Simpan event'}
+            </button>
+            <button className="btn-primary" onClick={onSchedule}>
+              <CalendarDays size={16}/>{scheduled?'Di jadwal saya':'Tambah ke jadwal'}
+            </button>
+          </div>
+
+          <div className="email-notify-card">
+            <div className="email-notify-header">
+              <div className="email-notify-title">
+                <Mail size={15}/>
+                <span>Pengingat Email (Gmail SMTP)</span>
+              </div>
+              <span className="email-badge">Notifikasi</span>
+            </div>
+            <p className="email-notify-desc">
+              Kirim jadwal dan detail kegiatan ini ke kotak masuk email aktif Anda.
+            </p>
+            <form className="email-notify-row" onSubmit={handleSendEmailNotification}>
+              <input
+                type="email"
+                className="email-notify-input"
+                placeholder="nama@gmail.com (Email aktif Anda)"
+                value={emailInput}
+                onChange={e => setEmailInput(e.target.value)}
+                disabled={sendingEmail}
+                required
+              />
+              <button
+                type="submit"
+                className="btn-send-email"
+                disabled={sendingEmail || !emailInput.trim()}
+              >
+                {sendingEmail ? 'Mengirim…' : <><Send size={13}/> Kirim</>}
+              </button>
+            </form>
+            {emailFeedback && (
+              <div className={`email-notify-alert ${emailFeedback.type}`}>
+                {emailFeedback.type === 'success' ? <Check size={14}/> : <X size={14}/>}
+                <span>{emailFeedback.text}</span>
+              </div>
+            )}
+          </div>
+
+          {event.isDummy&&<div className="simulation-note"><span className="sim-dot"/> Jadwal, waktu, dan lokasi ini adalah data simulasi.</div>}
+        </div>
+      </div>
+    </div>
+  );
+}
 function Empty({icon,title,text,action,onClick}){return <div className="empty-state"><span>{icon}</span><h3>{title}</h3><p>{text}</p>{action&&<button className="btn-secondary" onClick={onClick}>{action} <ArrowRight size={14}/></button>}</div>}
 
 createRoot(document.getElementById('root')).render(<App/>);

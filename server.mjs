@@ -1,6 +1,7 @@
 import { createServer } from 'node:http';
 import { readFileSync, existsSync } from 'node:fs';
 import dns from 'node:dns';
+import nodemailer from 'nodemailer';
 
 dns.setDefaultResultOrder('ipv4first');
 
@@ -43,7 +44,112 @@ const server = createServer(async (req, res) => {
   }
 
   if (req.method === 'GET' && req.url === '/api/health') {
-    return json(res, 200, { status: 'ok', activeModel: defaultModel, hasKey: Boolean(env.GEMINI_API_KEY) });
+    return json(res, 200, {
+      status: 'ok',
+      activeModel: defaultModel,
+      hasKey: Boolean(env.GEMINI_API_KEY),
+      smtpConfigured: Boolean(env.SMTP_USER && env.SMTP_PASS),
+      smtpUser: env.SMTP_USER || null,
+    });
+  }
+
+  // Endpoint Kirim Notifikasi Event via Gmail SMTP
+  if (req.method === 'POST' && req.url === '/api/email/notify-event') {
+    const currentEnv = loadEnv();
+    if (!currentEnv.SMTP_USER || !currentEnv.SMTP_PASS) {
+      return json(res, 400, {
+        error: 'Konfigurasi Gmail SMTP belum lengkap di file .env. Pastikan SMTP_USER dan SMTP_PASS sudah diisi.',
+      });
+    }
+
+    try {
+      let raw = '';
+      for await (const chunk of req) raw += chunk;
+      const { targetEmail, recipientName, event } = JSON.parse(raw || '{}');
+
+      if (!targetEmail || !targetEmail.includes('@')) {
+        return json(res, 400, { error: 'Alamat email penerima tidak valid.' });
+      }
+      if (!event || !event.title) {
+        return json(res, 400, { error: 'Data event tidak lengkap atau tidak valid.' });
+      }
+
+      const cleanUser = currentEnv.SMTP_USER.trim();
+      const cleanPass = currentEnv.SMTP_PASS.replace(/\s+/g, '');
+
+      const transporter = nodemailer.createTransport({
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true,
+        auth: {
+          user: cleanUser,
+          pass: cleanPass,
+        },
+      });
+      const mailOptions = {
+        from: `"UNKLAB HUB Campus" <${cleanUser}>`,
+        to: targetEmail.trim(),
+        subject: `[Pengingat Agenda] ${event.title} - UNKLAB HUB`,
+        html: `
+          <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; background-color: #ffffff; color: #2d3748;">
+            <div style="background-color: #402155; padding: 24px 20px; text-align: center; color: #ffffff;">
+              <h1 style="margin: 0; font-size: 20px; font-weight: 800; letter-spacing: -0.5px;">UNIVERSITAS KLABAT</h1>
+              <p style="margin: 4px 0 0; font-size: 13px; color: #d8c2e6;">UNKLAB HUB · Pengingat Agenda Kampus</p>
+            </div>
+            <div style="padding: 24px;">
+              <h2 style="font-size: 18px; color: #1a202c; margin-top: 0;">Halo, ${recipientName || 'Teman UNKLAB'}!</h2>
+              <p style="color: #4a5568; font-size: 14px; line-height: 1.6;">
+                Anda telah mendaftarkan / menyimpan agenda berikut ke dalam jadwal kegiatan Anda di <strong>UNKLAB HUB</strong>:
+              </p>
+              <div style="background-color: #faf7fc; border: 1px solid #f0e6f5; border-left: 4px solid #56366f; border-radius: 8px; padding: 16px; margin: 20px 0;">
+                <h3 style="margin: 0 0 12px; color: #352041; font-size: 17px;">${event.title}</h3>
+                <table style="width: 100%; font-size: 13.5px; color: #4a5568; line-height: 1.8;">
+                  <tr>
+                    <td style="width: 120px; font-weight: 600; color: #56366f;">Penyelenggara</td>
+                    <td>: ${event.organizerName || 'Universitas Klabat'}</td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight: 600; color: #56366f;">Tanggal</td>
+                    <td>: ${event.date || '-'}</td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight: 600; color: #56366f;">Waktu</td>
+                    <td>: ${event.startTime || 'Sesuai jadwal'} ${event.endTime ? `– ${event.endTime}` : ''} WITA</td>
+                  </tr>
+                  <tr>
+                    <td style="font-weight: 600; color: #56366f;">Lokasi</td>
+                    <td>: ${event.location || 'Kampus UNKLAB'}</td>
+                  </tr>
+                  ${event.description ? `
+                  <tr>
+                    <td style="font-weight: 600; color: #56366f; vertical-align: top;">Deskripsi</td>
+                    <td style="vertical-align: top;">: ${event.description}</td>
+                  </tr>` : ''}
+                </table>
+              </div>
+              <p style="color: #718096; font-size: 13px; line-height: 1.6;">
+                Pastikan Anda hadir tepat waktu. Informasi perubahan kegiatan akan selalu diperbarui di aplikasi UNKLAB HUB.
+              </p>
+            </div>
+            <div style="background-color: #f7fafc; padding: 16px 20px; text-align: center; border-top: 1px solid #edf2f7; font-size: 11.5px; color: #a0aec0;">
+              Pesan ini dikirimkan otomatis oleh sistem UNKLAB HUB menggunakan integrasi Gmail SMTP.<br/>
+              &copy; 2026 UNKLAB HUB · Airmadidi, Minahasa Utara, Sulawesi Utara.
+            </div>
+          </div>
+        `,
+      };
+
+      await transporter.sendMail(mailOptions);
+      return json(res, 200, {
+        success: true,
+        message: `Email notifikasi berhasil dikirimkan ke ${targetEmail.trim()}`,
+      });
+    } catch (err) {
+      console.error('[SMTP Error]', err);
+      return json(res, 500, {
+        error: `Gagal mengirim email: ${err.message || 'Periksa koneksi atau kredensial SMTP Anda.'}`,
+      });
+    }
   }
 
   if (req.method !== 'POST' || req.url !== '/api/ai') {
@@ -169,8 +275,13 @@ ${JSON.stringify(context)}`;
 });
 
 server.listen(port, () => {
-  console.log(`Campus AI proxy aktif di http://localhost:${port} (Model default: ${defaultModel})`);
+  console.log(`Campus AI proxy & Email service aktif di http://localhost:${port} (Model default: ${defaultModel})`);
   if (!env.GEMINI_API_KEY) {
     console.warn('PERINGATAN: GEMINI_API_KEY kosong. Isi file .env lalu restart npm run api.');
+  }
+  if (!env.SMTP_USER || !env.SMTP_PASS) {
+    console.warn('PERINGATAN: SMTP_USER atau SMTP_PASS belum diset di .env. Notifikasi email Gmail SMTP belum aktif.');
+  } else {
+    console.log(`Layanan Notifikasi Gmail SMTP siap (${env.SMTP_USER}).`);
   }
 });
