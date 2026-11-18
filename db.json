@@ -2036,40 +2036,6 @@
       ]
     },
     {
-      "title": "janjnvkj",
-      "categoryId": "cat-organization",
-      "description": "vajnvjkv",
-      "date": "2026-11-18",
-      "startTime": "06:33",
-      "endTime": "11:09",
-      "location": "njekangkngj",
-      "targetAudience": "mahasiswa",
-      "id": "event-1794931773750",
-      "organizerId": "user-mahasiswa-demo",
-      "organizerName": "Nadia Mahasiswa",
-      "status": "approved",
-      "sourceType": "mahasiswa_submission",
-      "isDummy": false,
-      "createdAt": "2026-11-17T16:09:33.750Z"
-    },
-    {
-      "title": "sgjkngjkfd",
-      "categoryId": "cat-choir",
-      "description": "kkngfsklng",
-      "date": "2026-11-18",
-      "startTime": "04:17",
-      "endTime": "06:17",
-      "location": "falkfnslanfsk",
-      "targetAudience": "mahasiswa",
-      "id": "event-1794932259495",
-      "organizerId": "user-mahasiswa-demo",
-      "organizerName": "Nadia Mahasiswa",
-      "status": "approved",
-      "sourceType": "mahasiswa_submission",
-      "isDummy": false,
-      "createdAt": "2026-11-17T16:17:39.495Z"
-    },
-    {
       "title": "fafnjkanfkl",
       "categoryId": "cat-organization",
       "description": "fuhanfj",
@@ -2090,7 +2056,7 @@
   "users": [
     {
       "id": "user-mahasiswa-demo",
-      "name": "Nadia Mahasiswa",
+      "name": "Ungke",
       "email": "mahasiswa.demo@unklab.ac.id",
       "password": "Mahasiswa123!",
       "role": "mahasiswa",
@@ -2098,10 +2064,12 @@
       "interests": [
         "Kerohanian",
         "Kepemimpinan",
+        "Olahraga",
+        "Teknologi",
         "Musik"
       ],
       "hobbies": [
-        "Membaca"
+        "BELAJAR"
       ],
       "activityTypes": [
         "choir",
@@ -2117,17 +2085,22 @@
     },
     {
       "id": "user-dosen-demo",
-      "name": "Dr. Dosen Demo",
+      "name": "Enrico",
       "email": "dosen.demo@unklab.ac.id",
       "password": "Dosen123!",
       "role": "dosen",
       "faculty": "Fakultas Keguruan",
       "interests": [
-        "Akademik"
+        "Olahraga"
       ],
-      "hobbies": [],
+      "hobbies": [
+        "olahraga"
+      ],
       "profileCompleted": true,
-      "activityTypes": [],
+      "activityTypes": [
+        "Kerohanian",
+        "Choir"
+      ],
       "freeTime": []
     },
     {
@@ -2142,13 +2115,7 @@
       "profileCompleted": true
     }
   ],
-  "bookmarks": [
-    {
-      "id": "bm-1794990687838",
-      "eventId": "event-choir-tuc-anniversary",
-      "userId": "user-mahasiswa-demo"
-    }
-  ],
+  "bookmarks": [],
   "mySchedule": [],
   "dormitories": [
     {

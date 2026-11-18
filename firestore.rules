@@ -8,11 +8,11 @@ service cloud.firestore {
 
     match /events/{eventId} {
       allow read: if resource.data.status == 'approved' || isAdmin() ||
-        (signedIn() && resource.data.organizerId == request.auth.uid);
-      allow create: if signedIn() && request.resource.data.organizerId == request.auth.uid &&
+        (signedIn() && resource.data.requesterId == request.auth.uid);
+      allow create: if signedIn() && request.resource.data.requesterId == request.auth.uid &&
         request.resource.data.status == 'pending';
-      allow update: if isAdmin() || (signedIn() && resource.data.organizerId == request.auth.uid &&
-        request.resource.data.organizerId == resource.data.organizerId &&
+      allow update: if isAdmin() || (signedIn() && resource.data.requesterId == request.auth.uid &&
+        request.resource.data.requesterId == resource.data.requesterId &&
         request.resource.data.status == resource.data.status);
       allow delete: if isAdmin();
     }

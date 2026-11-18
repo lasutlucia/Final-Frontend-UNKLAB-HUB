@@ -32,7 +32,16 @@ test('only recommends events matching a selected interest', () => {
     hobbies: ['Musik'],
   });
 
-  assert.deepEqual(result.map(event => event.id), ['technology']);
+  assert.deepEqual(result.map(event => event.id), ['music', 'technology']);
+});
+
+test('uses hobbies when building recommendations', () => {
+  const result = getRecommendations(events, {
+    interests: [],
+    hobbies: ['Musik'],
+  });
+
+  assert.deepEqual(result.map(event => event.id), ['music']);
 });
 
 test('shows every matching event across multiple selected interests', () => {

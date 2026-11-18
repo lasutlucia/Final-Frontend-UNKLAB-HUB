@@ -1,6 +1,6 @@
 import { initializeApp, getApps } from 'firebase/app';
 import { getAuth, signInWithEmailAndPassword, signOut } from 'firebase/auth';
-import { collection, deleteDoc, doc, getDoc, getDocs, getFirestore, query, setDoc, where } from 'firebase/firestore';
+import { collection, deleteDoc, doc, getDoc, getDocs, getFirestore, or, query, setDoc, where } from 'firebase/firestore';
 import demoSeed from '../db.json';
 
 const config = {
@@ -22,7 +22,7 @@ export async function readCollection(name, user) {
   let ref = collection(db, name);
   if (name === 'bookmarks' || name === 'mySchedule') ref = query(ref, where('userId', '==', user?.id || ''));
   if (name === 'events' && user?.role === 'organisasi') ref = query(ref, where('organizerId', '==', user.id));
-  if (name === 'events' && user?.role !== 'admin' && user?.role !== 'organisasi') ref = query(ref, where('status', '==', 'approved'));
+  if (name === 'events' && user?.role !== 'admin' && user?.role !== 'organisasi') ref = query(ref, or(where('status', '==', 'approved'), where('requesterId', '==', user?.id || '')));
   let snapshot;
   try { snapshot = await getDocs(ref); }
   catch (error) {

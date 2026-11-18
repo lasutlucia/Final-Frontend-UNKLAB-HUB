@@ -144,6 +144,20 @@ export const matchingInterests = (event, user, categories = []) => {
   });
 };
 
+export const matchingPreferences = (event, user, categories = []) => {
+  const text = categoryText(event, categories);
+  const preferences = [
+    ...(user?.interests || []),
+    ...(user?.hobbies || []),
+    ...(user?.activityTypes || []),
+    ...(user?.freeTime || []),
+  ].filter(Boolean);
+  return [...new Set(preferences)].filter(preference => {
+    const keywords = interestKeywords[normalize(preference).trim()] || [preference];
+    return keywords.some(keyword => hasKeyword(text, keyword));
+  });
+};
+
 const compareByDate = (left, right) =>
   left.date.localeCompare(right.date) ||
   (left.startTime || '').localeCompare(right.startTime || '');
@@ -154,15 +168,20 @@ export const getRecommendations = (
   categories = [],
   fallbackLimit = 3
 ) => {
-  const interests = user?.interests || [];
-  if (!interests.length) {
+  const preferences = [
+    ...(user?.interests || []),
+    ...(user?.hobbies || []),
+    ...(user?.activityTypes || []),
+    ...(user?.freeTime || []),
+  ].filter(Boolean);
+  if (!preferences.length) {
     return [...events].sort(compareByDate).slice(0, fallbackLimit);
   }
 
   return events
     .map(event => ({
       event,
-      matches: matchingInterests(event, user, categories),
+      matches: matchingPreferences(event, user, categories),
     }))
     .filter(result => result.matches.length > 0)
     .sort(
@@ -199,8 +218,26 @@ export const getRecommendationGroups = (
   }));
 };
 
+export const recommendationScore = (event, user, categories = []) => {
+  const text = normalize(categoryText(event, categories));
+  const preferences = [
+    ...(user?.interests || []),
+    ...(user?.hobbies || []),
+    ...(user?.activityTypes || []),
+    ...(user?.freeTime || []),
+  ].filter(Boolean);
+  const today = new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Asia/Makassar',
+  }).format(new Date());
+
+  return preferences.reduce(
+    (score, preference) => score + (text.includes(normalize(preference)) ? 3 : 0),
+    0,
+  ) + (event.date >= today ? 1 : 0);
+};
+
 export const recommendationReason = (event, user, categories = []) => {
-  const matches = matchingInterests(event, user, categories);
+  const matches = matchingPreferences(event, user, categories);
   return matches.length
     ? `Cocok dengan ${matches.slice(0, 2).join(' dan ')}`
     : 'Agenda terdekat yang masih tersedia';
