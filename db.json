@@ -2036,21 +2036,55 @@
       ]
     },
     {
-      "title": "seminar IoT",
-      "categoryId": "cat-faculty",
-      "description": "seminar IoT yang diselenggarakan oleh fakultas ilmu komputer",
-      "date": "2026-11-20",
-      "startTime": "10:00",
-      "endTime": "12:00",
-      "location": "Auditorium",
+      "title": "janjnvkj",
+      "categoryId": "cat-organization",
+      "description": "vajnvjkv",
+      "date": "2026-11-18",
+      "startTime": "06:33",
+      "endTime": "11:09",
+      "location": "njekangkngj",
       "targetAudience": "mahasiswa",
-      "id": "event-1794747310993",
+      "id": "event-1794931773750",
       "organizerId": "user-mahasiswa-demo",
       "organizerName": "Nadia Mahasiswa",
       "status": "approved",
       "sourceType": "mahasiswa_submission",
       "isDummy": false,
-      "createdAt": "2026-11-15T12:55:10.993Z"
+      "createdAt": "2026-11-17T16:09:33.750Z"
+    },
+    {
+      "title": "sgjkngjkfd",
+      "categoryId": "cat-choir",
+      "description": "kkngfsklng",
+      "date": "2026-11-18",
+      "startTime": "04:17",
+      "endTime": "06:17",
+      "location": "falkfnslanfsk",
+      "targetAudience": "mahasiswa",
+      "id": "event-1794932259495",
+      "organizerId": "user-mahasiswa-demo",
+      "organizerName": "Nadia Mahasiswa",
+      "status": "approved",
+      "sourceType": "mahasiswa_submission",
+      "isDummy": false,
+      "createdAt": "2026-11-17T16:17:39.495Z"
+    },
+    {
+      "title": "fafnjkanfkl",
+      "categoryId": "cat-organization",
+      "description": "fuhanfj",
+      "date": "2026-11-18",
+      "startTime": "15:57",
+      "endTime": "16:00",
+      "location": "afsafsfd",
+      "targetAudience": "mahasiswa",
+      "id": "event-1794988636851",
+      "organizerId": "user-mahasiswa-demo",
+      "organizerName": "Nadia Mahasiswa",
+      "status": "approved",
+      "sourceType": "mahasiswa_submission",
+      "isDummy": false,
+      "createdAt": "2026-11-18T07:57:16.851Z"
     }
   ],
   "users": [
@@ -2062,7 +2096,9 @@
       "role": "mahasiswa",
       "faculty": "Fakultas Ilmu Komputer",
       "interests": [
-        "Teknologi"
+        "Kerohanian",
+        "Kepemimpinan",
+        "Musik"
       ],
       "hobbies": [
         "Membaca"
@@ -2092,9 +2128,7 @@
       "hobbies": [],
       "profileCompleted": true,
       "activityTypes": [],
-      "freeTime": [
-        "Akhir pekan"
-      ]
+      "freeTime": []
     },
     {
       "id": "user-admin-demo",
@@ -2108,14 +2142,14 @@
       "profileCompleted": true
     }
   ],
-  "bookmarks": [],
-  "mySchedule": [
+  "bookmarks": [
     {
-      "id": "sc-1794746748137",
-      "eventId": "academic-2026-06-summer-finals",
+      "id": "bm-1794990687838",
+      "eventId": "event-choir-tuc-anniversary",
       "userId": "user-mahasiswa-demo"
     }
   ],
+  "mySchedule": [],
   "dormitories": [
     {
       "id": "dormitory-jasmine-1",
