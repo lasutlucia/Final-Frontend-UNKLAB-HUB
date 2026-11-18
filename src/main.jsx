@@ -1,10 +1,11 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { Activity, ArrowDownRight, ArrowLeft, ArrowRight, Bell, Bookmark, CalendarDays, Check, ChevronDown, ChevronLeft, ChevronRight, Clock3, Compass, GraduationCap, LayoutDashboard, ListFilter, LogOut, MapPin, Menu, MessageCircle, PanelLeftClose, PanelLeftOpen, Plus, Search, Send, Settings2, ShieldCheck, Sparkles, Users, X, Zap, Eye, EyeOff } from 'lucide-react';
+import { Activity, ArrowDownRight, ArrowLeft, ArrowRight, Bell, Bookmark, CalendarDays, Check, ChevronDown, ChevronLeft, ChevronRight, Clock3, Compass, GraduationCap, LayoutDashboard, ListFilter, LogOut, Mail, MapPin, Menu, MessageCircle, PanelLeftClose, PanelLeftOpen, Plus, Search, Send, Settings2, ShieldCheck, Sparkles, Users, X, Zap, Eye, EyeOff } from 'lucide-react';
 import './styles.css';
 import { firebaseEnabled, loginWithFirebase, logoutFromFirebase, readCollection, writeRecord } from './firebase.js';
 import { askCampusAI } from './ai.js';
 import demoSeed from '../db.json';
+import { categoryText, getRecommendationGroups, recommendationReason } from './recommendations.js';
 
 const API = import.meta.env.VITE_API_URL || 'http://localhost:3001';
 const roleNames = { mahasiswa: 'Mahasiswa', dosen: 'Dosen / Staff', admin: 'Admin' };
@@ -13,16 +14,6 @@ const iconFor = (name='') => /choir|musik|anniversary|homecoming/i.test(name) ? 
 const dateLabel = (date, opts={ weekday:'long', day:'numeric', month:'long' }) => new Intl.DateTimeFormat('id-ID', opts).format(new Date(`${date}T12:00:00`));
 const todayISO = () => new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Makassar' }).format(new Date());
 const todayLabel = () => new Intl.DateTimeFormat('id-ID', { timeZone: 'Asia/Makassar', weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }).format(new Date());
-const categoryText = (event, categories=[]) => `${event.title} ${event.organizerName} ${event.description} ${(event.tags || []).join(' ')} ${categories.find((c) => c.id === event.categoryId)?.name || event.categoryId || ''}`.toLowerCase();
-const recommendationScore = (event, user, categories=[]) => {
-  const text = categoryText(event, categories);
-  const preferences = [...(user?.interests || []), ...(user?.hobbies || []), ...(user?.activityTypes || []), ...(user?.freeTime || [])].filter(Boolean);
-  return preferences.reduce((score, item) => score + (text.includes(String(item).toLowerCase()) ? 3 : 0), 0) + (event.date >= todayISO() ? 1 : 0);
-};
-const recommendationReason = (event, user, categories=[]) => {
-  const matches = [...(user?.interests || []), ...(user?.hobbies || []), ...(user?.activityTypes || [])].filter((item) => categoryText(event, categories).includes(String(item).toLowerCase()));
-  return matches.length ? `Cocok dengan ${matches.slice(0, 2).join(' dan ')}` : 'Agenda terdekat yang masih tersedia';
-};
 const fmtTime = e => `${e.startTime || 'Waktu belum ditentukan'}${e.endTime ? ` – ${e.endTime}` : ''}`;
 const greetingWord = () => { const h = new Date().getHours(); return h < 11 ? 'Selamat pagi' : h < 15 ? 'Selamat siang' : h < 19 ? 'Selamat sore' : 'Selamat malam'; };
 const loginErrorMessage = error => {
