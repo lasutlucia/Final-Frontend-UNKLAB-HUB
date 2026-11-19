@@ -26,9 +26,11 @@ Front-end React untuk menemukan agenda akademik dan kegiatan kampus UNKLAB. Data
 
 6. Buka alamat lokal yang ditampilkan Vite (biasanya `http://localhost:5173`).
 
-Aplikasi memakai JSON Server lokal sebagai mode demo default. Firebase Authentication/Firestore tetap tersedia sebagai opsi jika seluruh variabel `VITE_FIREBASE_*` diisi; tidak ada kredensial Firebase yang disimpan di source code.
+Aplikasi saat ini memakai JSON Server lokal sebagai mode demo default. Firebase Authentication dan Cloud Firestore sudah disiapkan di kode, tetapi **belum diaktifkan pada konfigurasi repository ini** karena variabel `VITE_FIREBASE_*` di `.env` belum diisi. Tidak ada kredensial Firebase yang disimpan di source code.
 
-## Menghubungkan Firebase
+Dengan konfigurasi saat ini, gunakan akun demo lokal dan data `db.json`. Firebase baru digunakan setelah seluruh variabel `VITE_FIREBASE_*` diisi pada file `.env`, kemudian Vite dijalankan ulang.
+
+## Menghubungkan Firebase (opsional, belum aktif secara default)
 
 1. Buat proyek di Firebase Console, aktifkan **Authentication → Email/Password** dan buat database **Cloud Firestore**.
 2. Salin `.env.example` menjadi `.env`, lalu isi nilainya dari **Project settings → Your apps → Web app**. Restart Vite setelah mengubah `.env`.
