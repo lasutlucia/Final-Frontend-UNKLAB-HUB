@@ -599,93 +599,6 @@
       "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata."
     },
     {
-      "id": "event-meeting-cssa-20261112",
-      "title": "Meeting Rutin CSSA",
-      "categoryId": "cat-organization",
-      "eventType": "routine_meeting",
-      "organizerId": "org-cssa",
-      "organizerName": "CSSA",
-      "description": "Contoh agenda meeting rutin CSSA. Jadwal ini merupakan data simulasi untuk demonstrasi UNKLAB HUB.",
-      "date": "2026-11-12",
-      "startTime": "16:30",
-      "endTime": "17:30",
-      "location": "Ruang Kegiatan Organisasi (Lokasi Simulasi)",
-      "locationScope": "inside_unklab_simulated",
-      "targetAudience": [
-        "mahasiswa"
-      ],
-      "tags": [
-        "meeting",
-        "organisasi",
-        "kamis"
-      ],
-      "status": "approved",
-      "sourceType": "demo_seed",
-      "isDummy": true,
-      "recurrenceGroupId": "recurrence-org-cssa-thursday",
-      "recurrenceLabel": "Contoh pola mingguan setiap Kamis",
-      "approvedBy": "demo-seed",
-      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata."
-    },
-    {
-      "id": "event-meeting-cssa-20261119",
-      "title": "Meeting Rutin CSSA",
-      "categoryId": "cat-organization",
-      "eventType": "routine_meeting",
-      "organizerId": "org-cssa",
-      "organizerName": "CSSA",
-      "description": "Contoh agenda meeting rutin CSSA. Jadwal ini merupakan data simulasi untuk demonstrasi UNKLAB HUB.",
-      "date": "2026-11-19",
-      "startTime": "16:30",
-      "endTime": "17:30",
-      "location": "Ruang Kegiatan Organisasi (Lokasi Simulasi)",
-      "locationScope": "inside_unklab_simulated",
-      "targetAudience": [
-        "mahasiswa"
-      ],
-      "tags": [
-        "meeting",
-        "organisasi",
-        "kamis"
-      ],
-      "status": "approved",
-      "sourceType": "demo_seed",
-      "isDummy": true,
-      "recurrenceGroupId": "recurrence-org-cssa-thursday",
-      "recurrenceLabel": "Contoh pola mingguan setiap Kamis",
-      "approvedBy": "demo-seed",
-      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata."
-    },
-    {
-      "id": "event-meeting-bem-ubs-20261112",
-      "title": "Meeting Rutin BEM UBS",
-      "categoryId": "cat-organization",
-      "eventType": "routine_meeting",
-      "organizerId": "org-bem-ubs",
-      "organizerName": "BEM UBS",
-      "description": "Contoh agenda meeting rutin BEM UBS. Jadwal ini merupakan data simulasi untuk demonstrasi UNKLAB HUB.",
-      "date": "2026-11-12",
-      "startTime": "17:00",
-      "endTime": "18:00",
-      "location": "Ruang Kegiatan Organisasi (Lokasi Simulasi)",
-      "locationScope": "inside_unklab_simulated",
-      "targetAudience": [
-        "mahasiswa"
-      ],
-      "tags": [
-        "meeting",
-        "organisasi",
-        "kamis"
-      ],
-      "status": "approved",
-      "sourceType": "demo_seed",
-      "isDummy": true,
-      "recurrenceGroupId": "recurrence-org-bem-ubs-thursday",
-      "recurrenceLabel": "Contoh pola mingguan setiap Kamis",
-      "approvedBy": "demo-seed",
-      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata."
-    },
-    {
       "id": "event-meeting-bem-ubs-20261119",
       "title": "Meeting Rutin BEM UBS",
       "categoryId": "cat-organization",
@@ -955,35 +868,6 @@
       "organizerName": "IKMANUT (Ikatan Mahasiswa Nusa Utara)",
       "description": "Contoh agenda meeting rutin IKMANUT (Ikatan Mahasiswa Nusa Utara). Jadwal ini merupakan data simulasi untuk demonstrasi UNKLAB HUB.",
       "date": "2026-11-12",
-      "startTime": "16:00",
-      "endTime": "17:30",
-      "location": "Ruang Kegiatan Organisasi (Lokasi Simulasi)",
-      "locationScope": "inside_unklab_simulated",
-      "targetAudience": [
-        "mahasiswa"
-      ],
-      "tags": [
-        "meeting",
-        "organisasi",
-        "kamis"
-      ],
-      "status": "approved",
-      "sourceType": "demo_seed",
-      "isDummy": true,
-      "recurrenceGroupId": "recurrence-org-ikmanut-thursday",
-      "recurrenceLabel": "Contoh pola mingguan setiap Kamis",
-      "approvedBy": "demo-seed",
-      "reviewNote": "Status approved hanya untuk menampilkan seed data di lingkungan demo. Bukan persetujuan event nyata."
-    },
-    {
-      "id": "event-meeting-ikmanut-20261119",
-      "title": "Meeting Rutin IKMANUT",
-      "categoryId": "cat-organization",
-      "eventType": "routine_meeting",
-      "organizerId": "org-ikmanut",
-      "organizerName": "IKMANUT (Ikatan Mahasiswa Nusa Utara)",
-      "description": "Contoh agenda meeting rutin IKMANUT (Ikatan Mahasiswa Nusa Utara). Jadwal ini merupakan data simulasi untuk demonstrasi UNKLAB HUB.",
-      "date": "2026-11-19",
       "startTime": "16:00",
       "endTime": "17:30",
       "location": "Ruang Kegiatan Organisasi (Lokasi Simulasi)",
@@ -2016,41 +1900,81 @@
       ]
     },
     {
-      "id": "academic-2026-06-summer-finals",
-      "title": "Ujian Akhir Semester Padat 2026",
-      "date": "2026-06-01",
-      "endDate": "2026-07-03",
-      "categoryId": "cat-academic-calendar",
-      "organizerName": "Universitas Klabat",
-      "description": "Periode ujian akhir semester padat 2026 yang tercantum dalam kalender akademik.",
-      "location": "Area Akademik UNKLAB",
-      "startTime": "07:30",
-      "endTime": "17:00",
-      "status": "approved",
-      "sourceType": "academic_calendar",
+      "title": "tes",
+      "categoryId": "cat-seminar",
+      "description": "tes",
+      "date": "2026-11-19",
+      "startTime": "09:30",
+      "endTime": "10:30",
+      "location": "tes",
+      "targetAudience": "all_students",
+      "organizerId": "user-mahasiswa-demo",
+      "organizerRole": "",
+      "organizerRoleOther": "",
+      "dormitoryId": "",
+      "id": "event-1795051813213",
+      "requesterId": "user-mahasiswa-demo",
+      "requesterName": "Ungke",
+      "categorySlug": "seminar-workshop-competition",
+      "organizerEntityId": null,
+      "organizerName": "Ungke",
+      "status": "rejected",
+      "sourceType": "mahasiswa_submission",
       "isDummy": false,
-      "tags": [
-        "akademik",
-        "ujian",
-        "semester padat"
-      ]
+      "createdAt": "2026-11-19T01:30:13.213Z",
+      "reviewNote": "tes",
+      "updatedAt": "2026-11-19T01:31:25.430Z"
     },
     {
-      "title": "fafnjkanfkl",
-      "categoryId": "cat-organization",
-      "description": "fuhanfj",
-      "date": "2026-11-18",
-      "startTime": "15:57",
-      "endTime": "16:00",
-      "location": "afsafsfd",
-      "targetAudience": "mahasiswa",
-      "id": "event-1794988636851",
+      "title": "tes",
+      "categoryId": "cat-seminar",
+      "description": "tes",
+      "date": "2026-11-19",
+      "startTime": "09:32",
+      "endTime": "10:32",
+      "location": "tes",
+      "targetAudience": "all_students",
       "organizerId": "user-mahasiswa-demo",
-      "organizerName": "Nadia Mahasiswa",
+      "organizerRole": "",
+      "organizerRoleOther": "",
+      "dormitoryId": "",
+      "id": "event-1795051935268",
+      "requesterId": "user-mahasiswa-demo",
+      "requesterName": "Ungke",
+      "categorySlug": "seminar-workshop-competition",
+      "organizerEntityId": null,
+      "organizerName": "Ungke",
+      "status": "rejected",
+      "sourceType": "mahasiswa_submission",
+      "isDummy": false,
+      "createdAt": "2026-11-19T01:32:15.268Z",
+      "reviewNote": "Bentrok",
+      "updatedAt": "2026-11-19T01:47:54.024Z"
+    },
+    {
+      "title": "Choir TUC",
+      "categoryId": "cat-choir",
+      "description": "Latihan",
+      "date": "2026-11-19",
+      "startTime": "00:30",
+      "endTime": "01:50",
+      "location": "GK 1 101",
+      "targetAudience": "choir",
+      "organizerId": "user-mahasiswa-demo",
+      "organizerRole": "Ketua",
+      "organizerRoleOther": "",
+      "dormitoryId": "",
+      "id": "event-1795052836911",
+      "requesterId": "user-mahasiswa-demo",
+      "requesterName": "Ungke",
+      "categorySlug": "choir",
+      "organizerEntityId": "choir-tuc",
+      "organizerName": "TUC (The Unklab Choir)",
       "status": "approved",
       "sourceType": "mahasiswa_submission",
       "isDummy": false,
-      "createdAt": "2026-11-18T07:57:16.851Z"
+      "createdAt": "2026-11-19T01:47:16.911Z",
+      "updatedAt": "2026-11-19T01:48:03.906Z"
     }
   ],
   "users": [
@@ -2062,19 +1986,15 @@
       "role": "mahasiswa",
       "faculty": "Fakultas Ilmu Komputer",
       "interests": [
-        "Kerohanian",
-        "Kepemimpinan",
-        "Olahraga",
-        "Teknologi",
-        "Musik"
+        "Kepemimpinan"
       ],
       "hobbies": [
-        "BELAJAR"
+        "bernyanyi"
       ],
       "activityTypes": [
         "choir",
         "ibadah",
-        "Olahraga"
+        "Choir"
       ],
       "freeTime": [
         "sore",
@@ -2116,7 +2036,13 @@
     }
   ],
   "bookmarks": [],
-  "mySchedule": [],
+  "mySchedule": [
+    {
+      "id": "sc-1795052649215",
+      "eventId": "event-choir-tuc-anniversary",
+      "userId": "user-mahasiswa-demo"
+    }
+  ],
   "dormitories": [
     {
       "id": "dormitory-jasmine-1",

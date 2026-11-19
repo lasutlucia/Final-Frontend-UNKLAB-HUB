@@ -2,7 +2,8 @@ const API_URL = import.meta.env.VITE_AI_API_URL || 'http://localhost:3002';
 
 export async function askCampusAI(question, events, profile = {}) {
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 35000);
+  // Beri waktu cukup untuk cold start / koneksi Google API yang lambat.
+  const timeout = setTimeout(() => controller.abort(), 95000);
   let response;
   try {
     response = await fetch(`${API_URL}/api/ai`, {

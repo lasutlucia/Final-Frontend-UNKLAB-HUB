@@ -21,7 +21,8 @@ function loadEnv() {
 const env = loadEnv();
 const port = Number(env.AI_PORT || 3002);
 const defaultModel = env.GEMINI_MODEL || 'gemini-2.0-flash';
-const modelTimeoutMs = Number(env.GEMINI_TIMEOUT_MS || 30000);
+const fallbackModel = env.GEMINI_FALLBACK_MODEL || 'gemini-3.5-flash-lite';
+const modelTimeoutMs = Number(env.GEMINI_TIMEOUT_MS || 90000);
 
 const json = (res, status, body) => {
   res.writeHead(status, {
@@ -207,7 +208,7 @@ Pertanyaan: ${question}
 EVENT APPROVED:
 ${JSON.stringify(context)}`;
 
-    const candidateModels = [defaultModel].filter(Boolean);
+    const candidateModels = [...new Set([defaultModel, fallbackModel])].filter(Boolean);
 
     let lastError = null;
     let successfulPayload = null;
@@ -236,7 +237,8 @@ ${JSON.stringify(context)}`;
         if (!response.ok) {
           console.warn(`[Campus AI] Model ${model} merespons ${response.status}: ${payload.error?.message || 'Error'}`);
           lastError = new Error(payload.error?.message || `Google API error: ${response.status}`);
-          break;
+          // Model dapat berubah status atau terkena rate limit; coba fallback.
+          continue;
         }
 
         const candidate = payload.candidates?.[0];
@@ -253,9 +255,13 @@ ${JSON.stringify(context)}`;
         usedModel = model;
         break; // berhasil mendapatkan jawaban
       } catch (err) {
-        console.warn(`[Campus AI] Model ${model} gagal: ${err.message}`);
+        const message = err.name === 'AbortError'
+          ? `Timeout setelah ${Math.round(modelTimeoutMs / 1000)} detik`
+          : err.message;
+        console.warn(`[Campus AI] Model ${model} gagal: ${message}`);
         lastError = err;
-        break;
+        // Coba model cadangan jika model utama timeout atau gagal di level jaringan.
+        continue;
       }
     }
 

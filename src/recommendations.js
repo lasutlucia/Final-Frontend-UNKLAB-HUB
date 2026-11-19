@@ -149,8 +149,6 @@ export const matchingPreferences = (event, user, categories = []) => {
   const preferences = [
     ...(user?.interests || []),
     ...(user?.hobbies || []),
-    ...(user?.activityTypes || []),
-    ...(user?.freeTime || []),
   ].filter(Boolean);
   return [...new Set(preferences)].filter(preference => {
     const keywords = interestKeywords[normalize(preference).trim()] || [preference];
@@ -171,8 +169,6 @@ export const getRecommendations = (
   const preferences = [
     ...(user?.interests || []),
     ...(user?.hobbies || []),
-    ...(user?.activityTypes || []),
-    ...(user?.freeTime || []),
   ].filter(Boolean);
   if (!preferences.length) {
     return [...events].sort(compareByDate).slice(0, fallbackLimit);
